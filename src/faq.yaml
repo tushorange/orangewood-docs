@@ -1,0 +1,116 @@
+#
+# General FAQs
+#
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["General"]
+  answer: |-
+    answer will be here
+
+#
+# Technical FAQs
+#
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+- question: Sample question
+  tags: ["Technical"]
+  answer: |-
+    answer will be here
+
+#
+# Pricing FAQs
+#
+
+- question: Sample question
+  tags: ["Pricing"]
+  answer: |-
+    answer will be here

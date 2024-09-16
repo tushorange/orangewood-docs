@@ -1,0 +1,88 @@
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import DynamicBox from '../../src/components/DynamicBox';
+
+- **Response Model**
+
+  Combined tooltip position and joint rotations defining the arm's position.
+  
+<DynamicBox
+  titleText="joint_rotations"
+  listText="List [f64×6]"
+  description={`JointRotations = List [
+  Joint 0: f64
+  Joint 1: f64
+  Joint 2: f64
+  Joint 3: f64
+  Joint 4: f64
+  Joint 5: f64
+  ]`}
+  backgroundColor="#282a36"
+  titleColor="#bd94f6"
+  listColor="#f97316"
+/>
+
+{/* - **Create an Organisation**
+
+  After you have created your account on Dyte, go ahead and create an orgnisation. All meeting, sessions, logs and recordings are created within an organisation.
+
+- **Get your API Keys**
+
+  Copy the [API Keys](https://dev.dyte.io/apikeys) for your organization from
+the Developer portal. The API Key is unique to your organization and is
+required as an authorization header to use Dyte REST APIs. */}
+
+
+```tsx
+// TypeScript code block
+
+import { StandardBotsRobot } from '@standardbots/rest-sdk';
+
+const sdk = new StandardBotsRobot({
+  url: 'mybot.sb.app',
+  token: 'token',
+  robotKind: false,
+});
+
+await sdk.withConnection(async () => {
+  await sdk.movement.position.getArmPosition();
+});
+```
+
+```bash
+# cURL code block
+
+curl -X GET https://mybot.sb.app/api/v1/movement/position/arm \
+  -H "Authorization: Bearer token" \
+  -H "robot_kind: simulated"
+```
+
+```python
+# Python code block
+
+from standardbots import StandardBotsRobot
+
+sdk = StandardBotsRobot(
+    url='mybot.sb.app',
+    token='token',
+    robot_kind=False
+)
+
+with sdk.connect() as connection:
+    arm_position = sdk.movement.position.get_arm_position()
+    print(arm_position)
+```
+
+{/* <ThemedImage
+  alt="API key"
+  width="400"
+  height="300"
+  className='my-4 px-4'
+  sources={{
+    light: useBaseUrl('/static/dev-portal/api-key-light.png'),
+    dark: useBaseUrl('/static/dev-portal/api-key-dark.png'),
+  }}
+/> */}
+
+
+The next doc <a href={props.slug}>Set Arm Position (Move)</a> will talk about the basic concepts used in a system using Orangewood!

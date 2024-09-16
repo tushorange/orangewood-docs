@@ -1,0 +1,39 @@
+import {
+  ChatMultipleRegular,
+  LiveRegular,
+  MicRegular,
+  VideoRegular,
+  BookOpenRegular,
+  TargetRegular,
+} from '@fluentui/react-icons';
+
+<CardSection
+  id="Quickstart"
+  title="Quickstart"
+  description="Discover how Orangewood's AI-powered robots simplify operations and boost efficiency."
+>
+  <Card
+    title="Move your bot"
+    icon={<VideoRegular />}
+    to="/guides/live-video/arm-mvmnt-pos-control"
+    description="Add live video functionality to your web, mobile, and desktop applications."
+  />
+  <Card
+    title="Control your bot's gripper"
+    icon={<MicRegular />}
+    to="/guides/voice-conf/intro-voice-conf"
+    description="Integrate reliable voice calling experiences into your product."
+  />
+  <Card
+    title="Python and Typescript SDKs"
+    icon={<BookOpenRegular/>}
+    to="/guides/livestream/livestream-overview"
+    description="Get started with interactive livestreaming and broadcast to a large audience"
+  />
+  <Card
+    title="Low level control with ROS"
+    icon={<TargetRegular/>}
+    to="/guides/realtime-chat/intro-chat"
+    description="Create interactive and collaborative in-app chat experiences."
+  />
+</CardSection>

@@ -21,11 +21,11 @@ const meta = {
 
 /** @type {import('@docusaurus/plugin-content-docs').Options[]} */
 const docs = [
-    {
-      id: 'cli',
-      path: 'docs/cli',
-      routeBasePath: '/cli',
-    },
+    // {
+    //   id: 'cli',
+    //   path: 'docs/cli',
+    //   routeBasePath: '/cli',
+    // },
   // {
   //   id: 'plugin-sdk',
   //   path: 'docs/plugin-sdk',

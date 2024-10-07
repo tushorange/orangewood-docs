@@ -1,0 +1,190 @@
+---
+title: API Reference
+sidebar_position: 8
+description: >-
+  This documentation covers the Owl Client Robot Module and OwlSim Client Robot Module, which act as client interfaces to interact with OWLRobot and a MoveIt! based robot through ROS.
+---
+
+# API Reference
+
+This document covers two client APIs: 
+
+1. **OwlClient**: Provides a client interface to interact with OWLRobot over a network connection.
+2. **OwlSimClient**: Acts as a client interface to control a MoveIt! based robot through ROS in a simulated environment.
+
+---
+
+## OwlClient
+
+The `OwlClient` class provides a client interface to interact with OWLRobot over a network connection (preferably Ethernet). OWLRobot runs a gRPC server with a socket interface that provides robot state data at 125Hz under no load. This client class initializes a gRPC channel stub, allowing interaction with the OWLRobot server. Additionally, a socket listener is implemented to listen to state updates from the robot in real-time.
+
+### Class: `owl_client.client.robot.OwlClient(host)`
+
+**Bases**: `object`
+
+### Methods
+
+#### `change_speed_fraction(speedFraction: float)`
+Change the speed fraction setting for robot movement.
+
+- **Parameters**:  
+  `speedFraction` (*float*): The speed fraction to be applied to the robot's movement.
+
+#### `close()`
+Call the robot server to end TeachMode.
+
+#### `end_teach_mode()`
+End TeachMode on the robot server.
+
+#### `enter_teach_mode()`
+Activate TeachMode on the robot server.
+
+#### `get_fk(joints: list)`
+Call the robot server to solve the forward kinematics (FK) for the given joint values.
+
+- **Parameters**:  
+  `joints` (*list*): List of joint values for which to solve FK.
+
+#### `get_ik(initial_guess: list, pose: list)`
+Call the robot server to solve inverse kinematics (IK) based on an initial guess and a target pose.
+
+- **Parameters**:  
+  `initial_guess` (*list*): Initial guess for joint positions.  
+  `pose` (*list*): Target pose to achieve.
+
+#### `get_joint(wait=True)`
+Retrieve the current joint values of the robot.  
+If `wait=True`, the function will return the most recent data received from the robot.
+
+- **Returns**:  
+  `Joint`: The current joint values.
+
+#### `move_to_joint(jointPose: Joint, toolSpeed: float, wait=True, relative=False)`
+Move the robot to a specified joint configuration.
+
+- **Parameters**:  
+  `jointPose` (*Joint*): Target joint pose for the robot.  
+  `toolSpeed` (*float*): The speed at which the robot should move.  
+  `wait` (*bool*): Wait for the movement to finish (synchronous).  
+  `relative` (*bool*): If true, the movement is relative to the current joint position.
+
+#### `move_to_pose(goalPose: Pose, toolSpeed: float, wait=True, relative=False, moveType=TrajectoryPlanMode.STRAIGHT)`
+Move the robot to a specified Cartesian pose.
+
+- **Parameters**:  
+  `goalPose` (*Pose*): Target pose in [x, y, z, rx, ry, rz].  
+  `toolSpeed` (*float*): The speed for the movement.  
+  `wait` (*bool*): Wait for the movement to finish (synchronous).  
+  `relative` (*bool*): If true, the movement is relative to the current robot pose.  
+  `moveType` (*int*): Type of move planning mode.
+
+#### `move_process(processWaypoints: list, toolSpeed: float, referenceAcceleration: float = 0.005, wait=True)`
+Execute a process move with a set of Cartesian waypoints and tool speed.
+
+- **Parameters**:  
+  `processWaypoints` (*list*): List of Cartesian waypoints.  
+  `toolSpeed` (*float*): Tool speed for the process.  
+  `referenceAcceleration` (*float*): Acceleration for move process planning.  
+  `wait` (*bool*): Wait for the movement to finish (synchronous).
+
+#### Other Methods
+- `move_pause()`: Pause the current move.
+- `move_resume()`: Resume a paused move.
+- `move_abort()`: Abort the current move.
+- `power_on()`: Power on the robot.
+- `power_down()`: Power down the robot.
+- `send_script(script: str)`: Send an XML script program to the robot.
+
+---
+
+## OwlSimClient
+
+The `OwlSimClient` class is a client interface for controlling a MoveIt! based robot through ROS within a simulated environment. It handles the initialization, control, and interaction with the robot, including managing movement, adding obstacles, and controlling the gripper.
+
+### Class: `owl_sim_client.client.OwlSimClient`
+
+**Bases**: `object`
+
+### Methods
+
+#### `__init__(arm_group_name='arm', gripper_group_name='gripper', wait_for_servers=10, gripper_enable=True)`
+Initialize the robot environment, including the MoveIt! commander, ROS node, and publishers. It also sets up the arm and gripper groups for manipulation.
+
+- **Parameters**:  
+  `arm_group_name` (*str*, default='arm'): Name of the arm move group.  
+  `gripper_group_name` (*str*, default='gripper'): Name of the gripper move group.  
+  `wait_for_servers` (*int*, default=10): Time (in seconds) to wait for the move group servers.  
+  `gripper_enable` (*bool*, default=True): Whether to enable the gripper.
+
+#### `__repr__()`
+Returns a string representation of the client's current state.
+
+#### `is_running()`
+Check if the robot's move group is currently available.
+
+- **Returns**:  
+  `bool`: True if the move group is available, False otherwise.
+
+#### `get_version()`
+Returns the current version of the robot's software.
+
+#### `get_joint()`
+Retrieve the current joint values of the robot.
+
+#### `get_tcp()`
+Retrieve the current TCP (tool center point) values of the robot.
+
+#### `get_tcp_orientation(mode='quat')`
+Retrieve the current TCP orientation in either Euler angles or Quaternions.
+
+- **Parameters**:  
+  `mode` (*str*, default='quat'): 'euler' for Euler angles or 'quat' for Quaternion.
+
+#### `get_tcp_position()`
+Retrieve the current TCP position (x, y, z).
+
+#### `add_obstacle(object_type: str, name: str, pose: list, frame_id: str)`
+Add an obstacle to the planning scene.
+
+- **Parameters**:  
+  `object_type` (*str*): Type of the obstacle ('plane' or 'sphere').  
+  `name` (*str*): Name of the obstacle.  
+  `pose` (*list*): Position and orientation of the obstacle.  
+  `frame_id` (*str*): Reference frame for the obstacle's position.
+
+- **Returns**:  
+  `bool`: True if the obstacle was added successfully, False otherwise.
+
+#### `get_obstacles_list()`
+Retrieve a list of obstacles currently in the planning scene.
+
+- **Returns**:  
+  `list`: List of obstacle names.
+
+#### `remove_obstacle(name: str = None)`
+Remove a specific obstacle from the planning scene.
+
+- **Parameters**:  
+  `name` (*str*, optional): Name of the obstacle to remove. Defaults to None.
+
+#### `set_home(pose: str, wait=True)`
+Set the robot to a predefined home position.
+
+- **Parameters**:  
+  `pose` (*str*): Name of the home position.  
+  `wait` (*bool*): Whether to wait for the movement to complete.
+
+#### `set_gripper(goal_state: str, goal_value: int, mode: str, wait=True)`
+Set the state of the robot's gripper.
+
+- **Parameters**:  
+  `goal_state` (*str*): Target state for the gripper ('open' or 'close').  
+  `goal_value` (*int*): Value for the gripper position.  
+  `mode` (*str*): Mode for setting the gripper ('state' or 'value').  
+  `wait` (*bool*): Whether to wait for the gripper to achieve the state.
+
+#### `get_gripper()`
+Retrieve the current gripper state.
+
+- **Returns**:  
+  `list`: A list of joint values representing the gripper state.

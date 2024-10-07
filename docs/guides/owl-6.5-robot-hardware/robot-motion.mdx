@@ -1,0 +1,56 @@
+---
+title: Robot Motion
+sidebar_position: 4
+description: >-
+  add a description.
+---
+
+Motion is the basic and essential feature of the robotic arm. The robot is provided with a target position that it needs to achieve. To reach the target position, a path with time information is required that the robot needs to follow, which we call a **Trajectory**.
+
+The OWLRobot currently supports four move types: `MoveJ`, `MoveL`, `MoveP`, and `MoveT`. All these move requests will be handled by the internal controller running at 250Hz, which provides trajectory control by following the speed profile of the move request.
+
+1) **MoveJ** (*jointGoal, jointSpeed*)
+   - MoveJ moves the tool linearly in joint space to the desired joint position. The JointSpeed ​​parameter controls the trapezoidal velocity profile of motion.
+
+   Python Client Example: 
+```python
+from owl_client import OwlClient, Joint
+
+client = OwlClient("10.42.0.54")
+
+# Joints [Base, Shoulder , Elbow, Wrist1 , Wrist2 , Wrist3]
+joint = [0.0, 0.0, 0.0, 0.0, 0.0 ,0.0]
+
+jointGoal = Joint(*joint)
+jointSpeed = 50 #degrees/sec
+
+client.move_to_joint(jointGoal, jointSpeed)
+```
+2) **MoveL** (*cartesianGoal, toolSpeed*)
+   - MoveL moves the tool linearly in Cartesian space to the desired Cartesian position. The ToolSpeed ​​parameter controls the trapezoidal velocity profile of motion.
+
+   Python Client Example: 
+```python
+rom owl_client import OwlClient, Pose
+
+client = OwlClient("10.42.0.54")
+
+# Pose [x, y , z, roll, pitch , yaw]
+pose = [-0.176, -0.240204, 0.489203, 3.1376, -0.087288, 1.56449]
+
+poseGoal = Pose(*pose)
+toolSpeed = 100 #mm/sec
+
+client.move_to_pose(poseGoal, toolSpeed)
+```
+
+3) **MoveP** (*cartesianGoals, toolSpeed, blendFactor*)
+   - MoveP moves the tool in linear motion with constant speed and circular transitions and is intended for process operations such as spray painting and powder coating. The size of the blend radius is determined by the blendFactor setting and more the factor more the blend radius.
+
+4) **MoveT** (*trajectoryGoal*)
+   - MoveT allows the robot to follow a trajectory goal consisting of positions, velocities, and accelerations sampled at the controller frequency 250Hz. However, it is important to note that currently only the velocity profile is used to guide the robot along the given trajectory.
+
+<head>
+  <title>add a title</title>
+  <meta name="description" content="dummy description."/>
+</head>

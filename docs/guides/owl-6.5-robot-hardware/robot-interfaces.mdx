@@ -1,0 +1,70 @@
+---
+title: Robot Interfaces
+sidebar_position: 2
+---
+
+# Introduction
+
+This documentation serves as a comprehensive guide for utilizing the OWL Robot, a sophisticated robotic platform designed to communicate with external devices via various interfaces.
+
+## Robot Interfaces
+
+The OWL Robot has the capability to communicate with external devices using various types of communication interfaces.
+
+<img
+  src={require('../../../static/img/network.png').default}
+  alt="Orangewood Simulation Setup"
+  style={{ float: 'left', marginRight: '20px', marginBottom: '20px' }}
+/>
+
+<div style={{ clear: 'both' }}></div>
+
+### 1) TCP/IP Socket (30001)
+
+- The OWL controller exposes a socket server on port **30001**, which allows for the transmission of robot state data and additional messages. This data includes information about the robot’s current state, such as joint angles, end effector position, and other relevant parameters. The socket server primarily facilitates communication between the graphical user interface (GUI) and the controller. It serves as a means for the GUI to receive real-time updates on the robot’s state at **125Hz**, enabling visualizations and monitoring of its position, orientation, and other relevant data.
+
+- It plays a crucial role in maintaining communication and synchronization between the OWL controller and the GUI, ensuring that the interface accurately reflects the robot’s current state and enabling seamless interaction with the robot’s functionalities.
+
+## Robot Data
+
+| **Description**        | **Details**                                         | **Type** |
+| ---------------------- | --------------------------------------------------- | -------- |
+| **Joint Position**     | Current joint positions [BJ, SJ, EJ, WJ1, WJ2, W3J] | list     |
+| **Tool Position**      | Current tcp [x, y, z, roll, pitch, yaw]             | list     |
+| **Input Status**       | Not used                                            | list     |
+| **Script Status**      | XML program status                                  | int      |
+| **Script State**       | XML program active state                            | string   |
+| **Script Assignments** | XML program active assignments                      | string   |
+| **Robot Mode**         | Current mode of robot                               | int      |
+| **Exception Source**   | Source of exception on robot                        | string   |
+| **Exception Message**  | Exception message                                   | string   |
+| **Operator Request**   | Operator requested assignment                       | string   |
+| **Operator Message**   | Operator requested assignment message               | string   |
+
+:::info Important
+
+The state socket server, accessible at port **30001**, provides real-time updates of robot-related data at a frequency of **125Hz**. To ensure timely and responsive updates, the `TCP_NODELAY` option is enabled on this socket server. `TCP_NODELAY` is a feature that disables Nagle’s algorithm. By utilizing `TCP_NODELAY`, the client applications that read the data stream from the socket server can receive real-time updates without unnecessary delays. However, it’s worth noting that when multiple clients are connected to the socket server, the update frequency may be affected. Each client uses network resources, potentially resulting in a reduced update rate compared to the **125Hz** frequency when only a single client is connected.
+
+:::
+
+### 2) TCP/IP Socket (50001)
+
+- The controller binds a socket server to port **50001** to receive Joint/TCP jog data and pass it to the internal controller. The jog data comprises a list of direction values (-1, 0, 1), which indicates the desired movement direction of the robot in both Joint and Cartesian space. Each value corresponds to a specific joint or base frame axis of the robot. For instance, if we want to jog the robot’s base joint in a particular direction, we would send a jog command to the controller with the values [1, 0, 0, 0, 0, 0]. This indicates that the base joint should move while keeping all other joints stationary (set to zero command).
+
+- The jog command can control individual joints or base frame axis of the robot independently, allowing for precise and selective movement. Additionally, the controller’s socket server can only handle one client at a time. If a new client attempts to connect, the previous client’s connection will be closed to ensure exclusive control over the jog commands.
+
+:::warning
+
+This interface is only intended for use by the HMI GUI. It enables communication between the GUI and the controller for jogging operations. The GUI sends jog commands to the controller, specifying the desired movement direction for each joint or axis. The controller then processes these commands and controls the robot accordingly. It’s worth noting that this interface is dedicated to the GUI and is not intended for other clients or external devices. Its purpose is to facilitate smooth and precise jogging of the robot through the HMI’s intuitive controls.
+
+:::
+
+### 3) gRPC Server
+
+- To operate the OWLRobot, the main entry point is the gRPC server running on port **18861**. Requests are sent to this server using the gRPC protocol to command the internal control of the robot. The server processes these commands and adjusts the robot’s behavior accordingly. The GRPC server also handles any exceptions that may occur during the operation of the robot. If an error or exception arises, it will be communicated back to the client through the server’s response or raised as an exception. In addition to the core functionality of controlling the robot, the GRPC server also provides utility functions that can be used for various purposes related to the operation and management of the robot.
+
+- Overall, the GRPC server running on port **18861** serves as the primary interface for controlling the OWL robot and offers utility functions for additional operations.
+
+<head>
+  <title>Robot Interfaces</title>
+</head>

@@ -235,6 +235,10 @@ const plugins = [
           return ['/guides/capabilities/embed'];
         }
 
+        if (path.startsWith('/guides/owl-6.5-robot-hardware/robot-motion')) {
+          return ['/guides/capabilities/embed'];
+        }
+
         if (path.startsWith('/react-ui-kit/basics/integrate')) {
           return ['/react-ui-kit/basics/components-basics'];
         }
@@ -267,7 +271,7 @@ const plugins = [
           return ['/guides/owl-robot-sdk/concepts-voice-conf'];
         }
 
-        if (path.startsWith('/guides/livestream/concepts')) {
+        if (path.startsWith('/guides/owl-6.5-robot-hardware/robot-interfaces')) {
           return ['/guides/livestream/concepts-ils'];
         }
 
@@ -512,18 +516,18 @@ const config = {
             to: 'guides',
             className: 'guides-top-header',
           },
-          {
-            label: 'Dummy Text 1',
-            type: 'dropdown',
-            className: 'dyte-dropdown',
-            items: [
-              {
-                type: 'html',
-                value: sdksHTML,
-                className: 'dyte-dropdown',
-              },
-            ],
-          },
+          // {
+          //   label: 'Dummy Text 1',
+          //   type: 'dropdown',
+          //   className: 'dyte-dropdown',
+          //   items: [
+          //     {
+          //       type: 'html',
+          //       value: sdksHTML,
+          //       className: 'dyte-dropdown',
+          //     },
+          //   ],
+          // },
           {
             label: 'RobotGPT',
             to: 'https://orangewoodwebsite.vercel.app/robo-gpt',

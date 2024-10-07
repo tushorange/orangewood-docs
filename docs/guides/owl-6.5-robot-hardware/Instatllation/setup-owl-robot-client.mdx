@@ -1,0 +1,57 @@
+---
+title: Setup OWL Bot for OWL Client
+sidebar_position: 1
+description: >-
+  short description .
+---
+
+# Installation
+The OWLRobot is running `gRPC` and Socket server on all the available IP addresses. To operate the OWLRobot over a Local Area Network (LAN), we must first configure the network so that the client computer can access the OWLRobot host.
+
+## Setting up a OWL robot for OWL_Client
+
+### Network Setup
+The robot has a static IP address assigned, which is **10.42.0.54** ,but you can check it by opening the network settings from the NUC
+<span style={{ fontWeight: 'bold', color: 'violet' }}>(Settings -> Network -> Wired)</span>. A direct connection from the PC to the Robot reduces network hardware delay.
+
+
+    - Connect the OWL control box directly to the remote PC with an ethernet cable.
+    - On the remote PC, turn off all network devices except the **“wired connection”**, e.g. turn off wifi.
+    - Open Network Settings and create a new Wired connection with these settings. You may want to name this new connection OWL or something similar:
+
+``` 
+IPv4
+Manual
+Address: 10.42.0.52
+Netmask: 255.255.255.0
+Gateway: 10.42.0.1
+```
+    - Verify the connection from the remote PC with e.g. ping.
+```
+ping 10.42.0.54
+```
+
+
+### OWL Client PC 
+
+For using the owl python client make sure it is installed. You can only install it from the bitbucket source currently.
+
+    - Clone the owl_robot_client repository in local PC.
+    ```bash
+    git clone https://Orangewoodlabs@bitbucket.org/owl-dev/owl_robot_client.git -b main
+    ```
+
+    - Install the Python library by running the following commands in the cloned directory:
+
+```bash
+$ cd owl_robot_client
+$ pip install -e .
+```
+    - To verify library is installed successfully or not, execute the following commands in a terminal.
+    ```python
+    # Make sure python3 is installed
+    $ python3
+    Python 3.8.10 (default)
+    >>> from owl_client import OwlClient
+    >>>
+    ```

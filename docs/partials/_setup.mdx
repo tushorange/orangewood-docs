@@ -1,88 +1,69 @@
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import DynamicBox from '../../src/components/DynamicBox';
 
-- **Response Model**
+## Overview
 
-  Combined tooltip position and joint rotations defining the arm's position.
-  
-<DynamicBox
-  titleText="joint_rotations"
-  listText="List [f64×6]"
-  description={`JointRotations = List [
-  Joint 0: f64
-  Joint 1: f64
-  Joint 2: f64
-  Joint 3: f64
-  Joint 4: f64
-  Joint 5: f64
-  ]`}
-  backgroundColor="#282a36"
-  titleColor="#bd94f6"
-  listColor="#f97316"
-/>
+<div style={{ textAlign: 'justify' }}>
+  A python interface for controlling and receiving data from the OWL robot.
+</div>
 
-{/* - **Create an Organisation**
+### Modes
 
-  After you have created your account on Dyte, go ahead and create an orgnisation. All meeting, sessions, logs and recordings are created within an organisation.
+<div style={{ textAlign: 'justify' }}>
+  <ul>
+    <li>
+      <strong>NOT_AVAILABLE</strong>: This mode indicates that the robot is unavailable for operation. It is typically encountered when the robot’s boot-up sequence fails to complete successfully. In this state, the robot is unable to perform its intended functions or respond to commands.
+    </li>
+    <li>
+      <strong>POWER_OFF</strong>: This mode indicates that the robot is not powered. In this state, the robot will only respond to power on command.
+    </li>
+    <li>
+      <strong>IDLE</strong>: This mode indicates that the robot is available to all types of valid operations. In this state, the robot is able to perform its intended functions or respond to commands.
+    </li>
+    <li>
+      <strong>RUNNING</strong>: This mode indicates that the robot is executing a program script or a move command. In this state, the robot will not respond to TeachMode command.
+    </li>
+    <li>
+      <strong>PAUSED</strong>: This mode indicates that the robot has paused executing a program script or a move command. In this state also, the robot will not respond to TeachMode command.
+    </li>
+    <li>
+      <strong>TEACH_MODE</strong>: This mode indicates that the robot is in manual move mode (FreeDrive or JogDrive). In this state, the robot will not respond to any execution commands such as program script or move.
+    </li>
+    <li>
+      <strong>ERROR</strong>: This mode indicates that the robot previously shut down abnormally due to a sudden power failure and was unable to save the last encoder position. In this state, the robot must re-zero the position to resume normal operation.
+    </li>
+  </ul>
+</div>
 
-- **Get your API Keys**
+# Fetching the Current Robot Mode
 
-  Copy the [API Keys](https://dev.dyte.io/apikeys) for your organization from
-the Developer portal. The API Key is unique to your organization and is
-required as an authorization header to use Dyte REST APIs. */}
-
-
-```tsx
-// TypeScript code block
-
-import { StandardBotsRobot } from '@standardbots/rest-sdk';
-
-const sdk = new StandardBotsRobot({
-  url: 'mybot.sb.app',
-  token: 'token',
-  robotKind: false,
-});
-
-await sdk.withConnection(async () => {
-  await sdk.movement.position.getArmPosition();
-});
-```
-
-```bash
-# cURL code block
-
-curl -X GET https://mybot.sb.app/api/v1/movement/position/arm \
-  -H "Authorization: Bearer token" \
-  -H "robot_kind: simulated"
-```
+<div style={{ textAlign: 'justify' }}>
+  The current robot mode can be easily obtained via the Python client. Below is a code snippet showing how to do it:
+</div>
 
 ```python
-# Python code block
+from owl_client import OwlClient
 
-from standardbots import StandardBotsRobot
+client = OwlClient("10.42.0.54")
 
-sdk = StandardBotsRobot(
-    url='mybot.sb.app',
-    token='token',
-    robot_kind=False
-)
-
-with sdk.connect() as connection:
-    arm_position = sdk.movement.position.get_arm_position()
-    print(arm_position)
+# Return an integer value representing current robot mode
+print("Robot Current Mode :", client.get_robot_mode())
 ```
+## Robot Modes Table
 
-{/* <ThemedImage
-  alt="API key"
-  width="400"
-  height="300"
-  className='my-4 px-4'
-  sources={{
-    light: useBaseUrl('/static/dev-portal/api-key-light.png'),
-    dark: useBaseUrl('/static/dev-portal/api-key-dark.png'),
-  }}
-/> */}
+<div style={{ textAlign: 'justify' }}>
+  Below is a table summarizing the robot modes along with their corresponding values:
+</div>
+
+| **Robot Mode**      | **Value** |
+|---------------------|-----------|
+| NOT_AVAILABLE       | -1        |
+| POWER_OFF           | 0         |
+| IDLE                | 1         |
+| RUNNING             | 3         |
+| PAUSED              | 2         |
+| TEACH_MODE          | 5         |
+| ERROR               | -2        |
 
 
 The next doc <a href={props.slug}>Set Arm Position (Move)</a> will talk about the basic concepts used in a system using Orangewood!

@@ -187,7 +187,7 @@ const docs = [
 /** @type {import('@docusaurus/plugin-content-docs').Options} */
 const defaultSettings = {
   breadcrumbs: true,
-  editUrl: 'https://github.com/pratikbhavarthe/orangewood-docs',
+  editUrl: 'https://github.com/pratikbhavarthe/orangewood-docs/tree/main/',
   showLastUpdateTime: false,
   sidebarCollapsible: false,
   remarkPlugins: [

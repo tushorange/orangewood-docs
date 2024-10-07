@@ -17,61 +17,29 @@ export default function SDKs() {
   return (
     <section className="mx-auto mb-32 flex w-full max-w-5xl flex-col p-4 py-0">
       <span className="mb-2 uppercase tracking-wider text-text-400">
-        SDK Documentation
+        Owl Robot SDK Documentation
       </span>
 
       <h3 className="mb-12 text-4xl">
-        Build the way you want in the framework you want!
+        Seamless robot control and integration made simple OWL Robot SDK
       </h3>
 
       <div className="mb-10">
-        <h4 className="mb-2 text-2xl">UI Kit</h4>
+        <h4 className="mb-2 text-2xl">Develop Python applications with the OWL Robot SDK</h4>
 
         <p className="mb-6 text-text-400">
-          dummt description{' '}
-          <span className="font-semibold">dummy text</span>11.
-        </p>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          <SDK
-            name="React"
-            to=""
-            icon="/static/landing-page/sdk-icons/react.png"
-          />
-          <SDK
-            name="Angular"
-            to=""
-            icon="/static/landing-page/sdk-icons/angular.png"
-          />
-          <SDK
-            name="HTML"
-            to=""
-            icon="/static/landing-page/sdk-icons/html.png"
-          />
-        </div>
-      </div>
-
-      <div>
-        <h4 className="mb-2 text-2xl">Core SDK</h4>
-
-        <p className="mb-6 text-text-400">
-          dummy description{' '}
-          <span className="font-semibold">dummy text</span> SDK
-        </p>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          <SDK
-            name="JS"
-            to=""
-            icon="/static/landing-page/sdk-icons/js.png"
-          />
-          <SDK
-            name="React"
-            to=""
-            icon="/static/landing-page/sdk-icons/react.png"
-          />
           
-        </div>
+          <span className="font-semibold">Leverage the Owl Robot SDK to create Python applications for seamless robot control and automation, offering powerful tools for efficient robotic interaction.</span>
+        </p>
+
+        <div className="grid grid-cols-4 gap-4">
+  <SDK
+    name="Python"
+    to=""
+    icon="/static/landing-page/sdk-icons/python.png"
+  />
+</div>
+
       </div>
     </section>
   );

@@ -12,7 +12,7 @@ import clsx from 'clsx';
 const PRODUCTS = [
   {
     title: 'Live Video',
-    link: '/guides/live-video/arm-mvmnt-pos-control',
+    link: '/guides/sim-stack/orngwood-sim-stack',
     icon: VideoRegular,
     lightImage: '/static/landing-page/hero/1bg.png',
     darkImage: '/static/landing-page/hero/1bg.png',
@@ -20,7 +20,7 @@ const PRODUCTS = [
   },
   {
     title: 'Voice',
-    link: '/guides/voice-conf/intro-voice-conf',
+    link: '/guides/owl-robot-sdk/intro-voice-conf',
     icon: MicRegular,
     lightImage: '/static/landing-page/hero/voice-graphic.png',
     darkImage: '/static/landing-page/hero/voice-graphic-dark.png',
@@ -36,7 +36,7 @@ const PRODUCTS = [
   },
   {
     title: 'Voice',
-    link: '/guides/voice-conf/intro-voice-conf',
+    link: '/guides/owl-robot-sdk/intro-voice-conf',
     icon:TargetRegular,
     lightImage: '/static/landing-page/hero/voice-graphic.png',
     darkImage: '/static/landing-page/hero/voice-graphic-dark.png',

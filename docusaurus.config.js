@@ -187,7 +187,7 @@ const docs = [
 /** @type {import('@docusaurus/plugin-content-docs').Options} */
 const defaultSettings = {
   breadcrumbs: true,
-  editUrl: 'https://github.com/dyte-io/docs/tree/main/',
+  editUrl: 'https://github.com/pratikbhavarthe/orangewood-docs',
   showLastUpdateTime: false,
   sidebarCollapsible: false,
   remarkPlugins: [
@@ -259,12 +259,12 @@ const plugins = [
           ];
         }
 
-        if (path.startsWith('/guides/live-video/concepts')) {
-          return ['/guides/live-video/concepts-live-video'];
+        if (path.startsWith('/guides/sim-stack/concepts')) {
+          return ['/guides/sim-stack/concepts-live-video'];
         }
 
-        if (path.startsWith('/guides/voice-conf/concepts')) {
-          return ['/guides/voice-conf/concepts-voice-conf'];
+        if (path.startsWith('/guides/owl-robot-sdk/concepts')) {
+          return ['/guides/owl-robot-sdk/concepts-voice-conf'];
         }
 
         if (path.startsWith('/guides/livestream/concepts')) {

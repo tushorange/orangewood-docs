@@ -22,7 +22,7 @@ const guides: Guide[] = [
   {
     title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
     icon: RecordRegular,
-    text: '',
+    text: '', 
     link: '',
   },
   // {
@@ -49,9 +49,9 @@ interface Sample {
 
 const samples: Sample[] = [
   {
-    title: 'Robot Ros Org ',
+    title: 'Orangewood Sim Stack',
     skills: '',
-    source: 'https://github.com/orangewood-labs/robots.ros.org',
+    source: 'https://github.com/orangewood-co/orangewood_sim_stack',
     blog: '',
     demo: '',
   },

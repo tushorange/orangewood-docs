@@ -28,16 +28,16 @@ module.exports = {
           100: '#FF8F00', // Slightly lighter deep orange
           200: '#FFA726', // Lighter deep orange
           'primary-500': '#FF6F00', // Deep red orange color
-        },
+        },  
         secondary: {
-          DEFAULT: '#303030', // Black
-          1000: '#000000', // Pure black
-          900: '#1C1C1C', // Slightly lighter black
-          800: '#2C2C2C', // Medium black
-          700: '#3C3C3C', // Light black
-        },
+          DEFAULT: 'rgb(var(--docs-color-secondary-default, 48 48 48) / <alpha-value>)',
+          1000: 'rgb(var(--docs-color-secondary-1000, 0 0 0) / <alpha-value>)',
+          900: 'rgb(var(--docs-color-secondary-900, 28 28 28) / <alpha-value>)',
+          800: 'rgb(var(--docs-color-secondary-800, 44 44 44) / <alpha-value>)',
+          700: 'rgb(var(--docs-color-secondary-700, 60 60 60) / <alpha-value>)',
+        },        
         text: {
-          400: '#FF6F00', // Light deep orange for text
+          400: '#FF6F00'
         },
       },
     },

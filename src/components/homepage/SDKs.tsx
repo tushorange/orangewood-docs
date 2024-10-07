@@ -32,14 +32,13 @@ export default function SDKs() {
           <span className="font-semibold">Leverage the Owl Robot SDK to create Python applications for seamless robot control and automation, offering powerful tools for efficient robotic interaction.</span>
         </p>
 
-        <div className="grid grid-cols-4 gap-4">
-  <SDK
-    name="Python"
-    to=""
-    icon="/static/landing-page/sdk-icons/python.png"
-  />
-</div>
-
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+          <SDK
+            name="Python"
+            to=""
+            icon="/static/landing-page/sdk-icons/python.png"
+          />
+        </div>
       </div>
     </section>
   );

@@ -68,7 +68,7 @@ export function Card({
       {tag && (
         <div className="tag absolute right-0 top-0 h-16 w-16">
           <span
-            className="absolute right-[-28px] top-[-2px] w-[80px] rotate-45 transform bg-gray-600 py-1 text-center font-semibold text-white"
+            className="absolute right-[-28px] top-[-2px] w-[80px] rotate-45 transform bg-orange-600 py-1 text-center font-semibold text-white"
             style={{ backgroundColor: tag.color }}
             title={tag.description}
           >

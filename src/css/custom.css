@@ -142,7 +142,7 @@ body {
 
 /* Dyte Docs Tokens */
 :root {
-  --docs-color-primary: #2160fd;
+  --docs-color-primary: #fd7d21;
   /* --docs-color-primary-100: #1a90ff; */
   --docs-color-primary-tint: rgba(33, 96, 253, 0.16);
   --docs-color-primary-tint-light: rgba(33 96 253/0.24);
@@ -1440,4 +1440,3 @@ h2.anchor > code, h3.anchor > code {
 .warning_icon {
   @apply w-10 h-10 inline-block text-red-500 -mt-2;
 }
-

@@ -4,17 +4,17 @@ import { ArrowUpRight } from 'react-feather';
 import Head from '@docusaurus/Head';
 import ThemedImage from '@theme/ThemedImage';
 
-export default function APIReferenceSection() {
+export default function RoboGpt() {
   return (
     <section className="no-underline-links relative px-6">
       <Head>
-        <link rel="prefetch" href="/static/landing-page/api-ref-light.png" />
-        <link rel="prefetch" href="/static/landing-page/api-ref-dark.png" />
+        <link rel="prefetch" href="/static/landing-page/2.webp" />
+        <link rel="prefetch" href="/static/landing-page/2.webp" />
       </Head>
       <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-10 rounded-2xl bg-gradient-to-r from-black to-zinc-800 px-6 py-20 text-center text-white dark:from-zinc-100 dark:to-white dark:text-black lg:flex-row lg:p-20 lg:text-left">
         <Link
           href="/api"
-          aria-label="API Reference"
+          aria-label="RoboGPT"
           target="_blank"
           className="absolute top-8 right-8 flex h-16 w-16 items-center justify-center rounded-full bg-zinc-600/40 dark:bg-transparent"
         >
@@ -23,8 +23,9 @@ export default function APIReferenceSection() {
         <div className="flex-1">
           <h2 className="text-4xl">RoboGPT</h2>
           <p className="text-zinc-400">
-          RoboGPT revolutionizes robotic programming by enabling voice or text commands in multiple languages. 
-          It adapts to changes, ensures safety, and is now live for pick-and-place applications.
+            RoboGPT revolutionizes robotic programming by enabling voice or text
+            commands in multiple languages. It adapts to changes, ensures
+            safety, and is now live for pick-and-place applications.
           </p>
           <Link
             href="https://robogpt.orangewood.co/"
@@ -80,8 +81,8 @@ export default function APIReferenceSection() {
         <div className="flex flex-1 justify-end">
           <ThemedImage
             sources={{
-              light: 'https://res.cloudinary.com/dreradzep/image/upload/v1724994507/blog2_pwxftl.jpg',
-              dark: 'https://res.cloudinary.com/dreradzep/image/upload/v1724994507/blog2_pwxftl.jpg',
+              light: '/static/landing-page/2.webp',
+              dark: '/static/landing-page/2.webp',
             }}
             alt="API Reference Preview"
             loading="lazy"

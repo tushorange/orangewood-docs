@@ -74,7 +74,7 @@ function Links({ name, links }) {
 
   return (
     <div>
-      <h3 className="font-jakarta text-base font-semibold uppercase text-gray-400 dark:text-[#fff]">
+      <h3 className="font-jakarta text-base font-semibold uppercase text-gray-400 dark:text-gray-400">
         {name}
       </h3>
       <div className="flex flex-col gap-3">
@@ -82,7 +82,7 @@ function Links({ name, links }) {
           <div key={name}>
             <Link
               href={href}
-              className="text-base text-gray-700 hover:text-primary hover:no-underline dark:text-[#f9f9f9]"
+              className="text-base text-gray-700 hover:text-primary hover:no-underline dark:text-[#f9f9f9] dark:hover:text-[#ff5b22]"
               onClick={() => (isAccordion ? toggleAccordion(href) : null)}
             >
               {name}
@@ -93,7 +93,7 @@ function Links({ name, links }) {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-base text-gray-700 hover:text-primary hover:no-underline dark:text-[#f9f9f9]"
+                      className="text-base text-gray-700 hover:text-primary hover:no-underline dark:text-[#f9f9f9] dark:hover:text-[#ff5b22]"
                     >
                       {item.name}
                     </Link>
@@ -107,6 +107,7 @@ function Links({ name, links }) {
     </div>
   );
 }
+
 
 export default function Footer() {
   return (
@@ -133,23 +134,24 @@ export default function Footer() {
         <hr className="my-12 !bg-gray-300 dark:!bg-[#999]" />
 
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
-          <div className="flex flex-wrap gap-2 text-sm text-gray-500">
-            <Link className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
-              Privacy Policy
-            </Link>
-            &bull;
-            <Link className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
-              Terms of Service
-            </Link>
-            &bull;
-            <Link className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
-              Website Terms of Use
-            </Link>
-            &bull;
-            <span className="text-inherit dark:text-[#999]">
-              &copy; {new Date().getFullYear()} Orangewood Labs.
-            </span>
-          </div>
+        <div className="flex flex-wrap gap-2 text-sm text-gray-500">
+  <Link className="text-inherit hover:text-[#ff5b22] hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
+    Privacy Policy
+  </Link>
+  &bull;
+  <Link className="text-inherit hover:text-[#ff5b22] hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
+    Terms of Service
+  </Link>
+  &bull;
+  <Link className="text-inherit hover:text-[#ff5b22] hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
+    Website Terms of Use
+  </Link>
+  &bull;
+  <span className="text-inherit dark:text-[#999]">
+    &copy; {new Date().getFullYear()} Orangewood Labs.
+  </span>
+</div>
+
 
           <div className="flex items-center gap-4">
             <Link

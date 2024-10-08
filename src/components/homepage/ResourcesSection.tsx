@@ -18,7 +18,7 @@ interface Reference {
 
 const ALL_REFERENCES: Reference[] = [
   {
-    url: 'https://orangewoodwebsite.vercel.app/blogs/introducing-our-new-website-built-with-next-js-610652388c21',
+    url: 'https://www.orangewood.co/blogs/introducing-our-new-website-built-with-next-js-610652388c21',
     type: 'blog',
     title: 'Introducing Our New Website: Built with Next.js',
     description:
@@ -28,7 +28,7 @@ const ALL_REFERENCES: Reference[] = [
     duration: '3 min',
   },
   {
-    url: 'https://orangewoodwebsite.vercel.app/blogs/enhancing-robogpt-with-hand-teaching-and-diffseek-integration-ba196f0c8fb8',
+    url: 'https://www.orangewood.co/blogs/enhancing-robogpt-with-hand-teaching-and-diffseek-integration-ba196f0c8fb8',
     type: 'blog',
     title: 'Enhancing RoboGPT with Hand Teaching and DiffSeek Integration',
     description:
@@ -37,32 +37,24 @@ const ALL_REFERENCES: Reference[] = [
       'https://res.cloudinary.com/dreradzep/image/upload/v1724994507/blog2_pwxftl.jpg',
     duration: '10 min',
   },
-  // {
-  //   url: 'https://www.youtube.com/watch?v=eVUqkNNHh1o',
-  //   type: 'video',
-  //   title: 'Integrating React UI Kit',
-  //   description:
-  //     'In this video learn how to use React UI Kit prebuilt components to add live video and audio to your React application.',
-  //   image: 'https://img.youtube.com/vi/eVUqkNNHh1o/hqdefault.jpg',
-  //   duration: '5 min',
-  // },
   {
     url: 'https://youtu.be/RsERNEZ5yx8?si=iqIpU0My5Og1H3Cq',
     type: 'video',
     title: 'Food Bot - Cooking with Robot by Orangewood Labs',
     description:
       'Watch our Orangewood Labs robotic arm expertly fry food, blending technology with culinary art',
-    image: '',
+    image: 'https://res.cloudinary.com/dreradzep/image/upload/v1728387055/ss2_yql2xg.png',
     duration: '5 min',
   },
-  // {
-  //   url: 'https://www.youtube.com/watch?v=UHuzWDxrvLk',
-  //   type: 'video',
-  //   title: 'Calling Dyte REST APIs',
-  //   description: 'Understand our HTTP REST APIs',
-  //   image: 'https://img.youtube.com/vi/UHuzWDxrvLk/hqdefault.jpg',
-  //   duration: '7 min',
-  // },
+  {
+    url: 'https://www.youtube.com/watch?v=hIdrz4ihuoA',
+    type: 'video',
+    title: 'Drink Pouring with RoboGPT | Roboskill | Robo GPT Autoskill',
+    description:
+      'Watch RoboGPT, our six-axis robotic arm, expertly mix drinks with precision and AI-driven control!',
+    image: 'https://res.cloudinary.com/dreradzep/image/upload/v1728386876/ss1_ai2kgm.png',
+    duration: '5 min',
+  },
 ];
 
 function Reference({
@@ -95,7 +87,7 @@ function Reference({
       </div>
       <div className="mt-4 flex items-center justify-between">
         <div className="text-sm text-text-400">
-          {`${duration} ${type === 'Video' ? 'watch' : 'read'}`}
+          {`${duration} ${type === 'video' ? 'watch' : 'read'}`}
         </div>
       </div>
     </Link>
@@ -111,8 +103,10 @@ export default function ReferenceSection() {
       ? ALL_REFERENCES
       : ALL_REFERENCES.filter((r) => r.type === activeType);
 
-  const currentReferences = references.slice((page - 1) * 3, page * 3);
+  // Debugging: Log the filtered references
+  console.log('Filtered References:', references);
 
+  const currentReferences = references.slice((page - 1) * 3, page * 3);
   const pages = Math.ceil(references.length / 3);
 
   const nextPage = () => {
@@ -143,37 +137,44 @@ export default function ReferenceSection() {
           </Link>
         </div>
 
-        <div className="mb-6 inline-flex gap-1 rounded-lg bg-secondary-700 p-2 font-jakarta text-sm font-semibold dark:bg-secondary-700">
-          <button
-            className={clsx(
-              'rounded-lg px-4 py-2 transition-colors',
-              activeType === 'all' &&
-                'bg-zinc-700 text-orange-500 dark:bg-zinc-200 dark:text-black'
-            )}
-            onClick={() => setActiveType('all')}
-          >
-            All
-          </button>
-          <button
-            className={clsx(
-              'rounded-lg px-4 py-2 transition-colors',
-              activeType === 'blog' &&
-                'bg-zinc-700 text-white dark:bg-zinc-200 dark:text-black'
-            )}
-            onClick={() => setActiveType('blog')}
-          >
-            Blogs
-          </button>
-          <button
-            className={clsx(
-              'rounded-lg px-4 py-2 transition-colors',
-              activeType === 'video' &&
-                'bg-zinc-700 text-white dark:bg-zinc-200 dark:text-black'
-            )}
-            onClick={() => setActiveType('video')}
-          >
-            Videos
-          </button>
+        <div className="mb-6 inline-flex gap-1 rounded-lg bg-zinc-100 p-2 font-jakarta text-sm font-semibold dark:bg-secondary-700">
+        <button
+        className={clsx(
+          'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
+          activeType === "all"
+            ? 'bg-primary text-white'
+            : 'bg-secondary-800 text-black dark:text-white'
+        )}
+        data-tag={"all"}
+        onClick={() => setActiveType("all")}
+      >
+        {"All"}
+      </button>
+      <button
+        className={clsx(
+          'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
+          activeType === "blog"
+            ? 'bg-primary text-white'
+            : 'bg-secondary-800 text-black dark:text-white'
+        )}
+        data-tag={"blog"}
+        onClick={() => setActiveType("blog")}
+      >
+        {"Blog"}
+      </button>
+      <button
+        className={clsx(
+          'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
+          activeType === "video"
+            ? 'bg-primary text-white'
+            : 'bg-secondary-800 text-black dark:text-white'
+        )}
+        data-tag={"video"}
+        onClick={() => setActiveType("video")}
+      >
+        {"All"}
+      </button>
+        
         </div>
 
         <div className="relative flex flex-col">

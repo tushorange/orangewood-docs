@@ -95,7 +95,7 @@ export default function Footer() {
             alt="Orangewood Labs"
             className="h-9 w-fit lg:h-12"
             sources={{
-              light: 'https://res.cloudinary.com/dreradzep/image/upload/v1723783987/logo-white_kw3yma.png',
+              light: 'https://res.cloudinary.com/dreradzep/image/upload/v1728387740/ow-black_ztbhda.png',
               dark: 'https://res.cloudinary.com/dreradzep/image/upload/v1723783987/logo-white_kw3yma.png',
             }}
           />

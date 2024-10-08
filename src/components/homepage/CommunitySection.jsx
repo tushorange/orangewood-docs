@@ -11,14 +11,6 @@ const githubUsernames = [
   'topguns837',
   'mendacium-a11y',
   'yuvimehta',
-  // 'alias-rahil',
-  // 'AshishKumar4',
-  // 'anunaym14',
-  // 'tarushnagpal',
-  // 'ishita1805',
-  // 'madhugb',
-  // 'mayur-tendulkar',
-  // 'milapsingh',
 ];
 
 export default function CommunitySection() {
@@ -44,19 +36,19 @@ export default function CommunitySection() {
         </div>
         <div className="flex w-full flex-col items-center justify-center gap-4 text-sm font-semibold lg:flex-row lg:gap-6">
           <Link
-            className="flex items-center justify-center gap-2 rounded-full border border-primary-100 bg-gradient-to-r from-primary-100 to-primary-200 px-4 py-2 text-white shadow-md transition hover:bg-primary-300 hover:text-black"
+            className="flex items-center justify-center gap-2 rounded-full border border-primary-100 bg-gradient-to-r from-primary-100 to-primary-200 px-4 py-2 text-white shadow-md transition hover:bg-primary-300 hover:text-orange-800"
             href="https://discord.com/invite/tuEAx6T4YE"
           >
             <DiscordIcon className="h-6 w-6" /> Discord &rarr;
           </Link>
           <Link
-            className="flex items-center justify-center gap-2 rounded-full border border-primary-100 bg-gradient-to-r from-primary-100 to-primary-200 px-4 py-2 text-white shadow-md transition hover:bg-primary-300 hover:text-black"
-            href="https://twitter.com/dyte_io"
+            className="flex items-center justify-center gap-2 rounded-full border border-primary-100 bg-gradient-to-r from-primary-100 to-primary-200 px-4 py-2 text-white shadow-md transition hover:bg-primary-300 hover:text-orange-800"
+            href="https://x.com/OrangewoodLabs"
           >
             <Twitter className="h-5 w-5" /> Twitter &rarr;
           </Link>
           <Link
-            className="flex items-center justify-center gap-2 rounded-full border border-primary-100 bg-gradient-to-r from-primary-100 to-primary-200 px-4 py-2 text-white shadow-md transition hover:bg-primary-300 hover:text-black"
+            className="flex items-center justify-center gap-2 rounded-full border border-primary-100 bg-gradient-to-r from-primary-100 to-primary-200 px-4 py-2 text-white shadow-md transition hover:bg-primary-300 hover:text-orange-800"
             href="https://www.linkedin.com/company/orangewood-labs/"
           >
             <Linkedin className="h-5 w-5" /> LinkedIn &rarr;

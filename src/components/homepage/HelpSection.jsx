@@ -23,13 +23,16 @@ export default function HelpSection({ className = '' }) {
               height="48"
             />
             <h3 className="my-3">Book a Demo</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+            <p
+              style={{ textAlign: 'justify' }}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
               Contact us for a demo. We are looking forward to connecting with
               you.
             </p>
             <Link
               href="https://calendly.com/pratik-b-orangewood/30min"
-              className="text-primary dark:text-primary-100"
+              className="text-primary dark:text-primary-100 inline-block"
             >
               Schedule a Call &rarr;
             </Link>
@@ -43,13 +46,15 @@ export default function HelpSection({ className = '' }) {
               height="48"
             />
             <h3 className="my-3">Support</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
-              Orangewood&apos;s expert support team is always available to help. Connect for
-              dedicated 1:1 support!
+            <p
+              style={{ textAlign: 'justify' }}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Orangewood's support team is ready to assist. Get 1:1 help now!
             </p>
             <Link
               href="mailto:all@orangewood.co"
-              className="text-primary dark:text-primary-100"
+              className="text-primary dark:text-primary-100 inline-block"
             >
               Contact Us &rarr;
             </Link>
@@ -63,11 +68,14 @@ export default function HelpSection({ className = '' }) {
               height="48"
             />
             <h3 className="my-3">FAQs</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+            <p
+              style={{ textAlign: 'justify' }}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
               Browse through our FAQs to find answers to commonly asked
               questions.
             </p>
-            <Link href="/faq" className="text-primary dark:text-primary-100">
+            <Link href="/faq" className="text-primary dark:text-primary-100 inline-block">
               View FAQs &rarr;
             </Link>
           </div>

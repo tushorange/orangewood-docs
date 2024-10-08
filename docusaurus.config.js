@@ -570,8 +570,8 @@ const config = {
       footer: {
         logo: {
           href: '/',
-          src: 'https://res.cloudinary.com/dreradzep/image/upload/v1723783987/logo-white_kw3yma.png',
-          srcDark: 'https://res.cloudinary.com/dreradzep/image/upload/v1723783987/logo-white_kw3yma.png',
+          src: 'static/logo/ow-black.png',
+          srcDark: 'static/logo/ow-black.png',
           alt: 'Orangewood Documentation | Ornagewood Docs',
           height: '36px',
         },

@@ -521,7 +521,7 @@ const config = {
           },
           {
             label: 'RobotGPT',
-            to: 'https://orangewoodwebsite.vercel.app/robo-gpt',
+            to: 'https://www.orangewood.co/robo-gpt',
           },
           {
             label: 'Help',
@@ -537,8 +537,8 @@ const config = {
           },
           {
             label: 'Support',
-            to: 'https://orangewoodwebsite.vercel.app/blogs',
-          },
+            to: 'mailto:all@orangewood.co',
+        },        
 
           // {
           //   type: 'search',

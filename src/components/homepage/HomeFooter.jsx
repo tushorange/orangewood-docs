@@ -18,11 +18,11 @@ const developers = [
     name: 'OWL 6.5 Robot Hardware',
     isAccordion: true,
     content: [
-      { name: 'OWL Robot Client', href: '' },
-      { name: 'Robot Interfaces', href: '' },
-      { name: 'Robot Modes', href: '' },
-      { name: 'Robot Motion', href: '' },
-      { name: 'Robot Python Client stack', href: '' },
+      { name: 'OWL Robot Client', href: '/guides/owl-6.5-robot-hardware/owl-robot-client' },
+      { name: 'Robot Interfaces', href: '/guides/owl-6.5-robot-hardware/robot-interfaces' },
+      { name: 'Robot Modes', href: '/partials/_setup' },
+      { name: 'Robot Motion', href: '/guides/owl-6.5-robot-hardware/robot-motion' },
+      { name: 'Robot Python Client stack', href: 'robot /guides/owl-6.5-robot-hardware/robot-python-client' },
     ],
   },
 ];

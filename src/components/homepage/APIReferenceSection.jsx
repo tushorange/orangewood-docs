@@ -36,7 +36,7 @@ export default function RoboGpt() {
           <ul className="mt-10 flex list-none flex-col gap-4 text-left lg:pl-0">
             <li className="flex flex-col gap-1">
               <Link
-                href="https://robogpt.orangewood.co/"
+                href="https://youtu.be/IHGVLoHiPys?si=GQp7ohoWWlqQbrC6"
                 className="group font-jakarta font-semibold text-current"
               >
                 Make a popcorn 🍿
@@ -50,7 +50,7 @@ export default function RoboGpt() {
             </li>
             <li className="flex flex-col gap-1">
               <Link
-                href=""
+                href="https://youtu.be/bRryTvm8eVM?si=E9JqY9iu3jlp14Vs"
                 className="group font-jakarta font-semibold text-current"
               >
                 Ask to make a drink 🍸
@@ -64,7 +64,7 @@ export default function RoboGpt() {
             </li>
             <li className="flex flex-col gap-1">
               <Link
-                href=""
+                href="https://youtu.be/fb98sFh07O4?si=lBDGSkQ78-zeQRKF"
                 className="group font-jakarta font-semibold text-current"
               >
                 Teach a new skill 🤖

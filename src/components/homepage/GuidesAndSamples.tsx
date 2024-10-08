@@ -25,12 +25,6 @@ const guides: Guide[] = [
     text: '', 
     link: '',
   },
-  // {
-  //   title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
-  //   icon: VideoRegular,
-  //   text: '',
-  //   link: '',
-  // },
   {
     title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
     icon: AppsAddInRegular,
@@ -62,13 +56,6 @@ const samples: Sample[] = [
     source: 'https://github.com/orangewood-labs/RoboGPT',
     demo: 'https://youtu.be/tfsC6treKn0?si=rCZvh0rDZnF6d3m8',
   },
-  // {
-  //   title: 'Live Proctoring System',
-  //   platform: 'React',
-  //   blog: 'https://dyte.io/blog/live-proctoring-system/',
-  //   source: 'https://github.com/dyte-io/proctored-live-interviews',
-  //   demo: 'https://dyte-multi-faces.netlify.app/',
-  // },
 ];
 
 function Guide({ title, text, icon: Icon, link }: (typeof guides)[0]) {
@@ -129,7 +116,8 @@ function Sample({ title, skills, blog, source, demo }: Sample) {
 export default function GuidesAndSamples() {
   return (
     <section className="no-underline-links my-40 mx-auto flex w-full max-w-5xl flex-col gap-10 p-4 py-0 md:flex-row md:gap-0">
-      <div className="flex-1">
+      {/* Commenting out Popular how-to guides section */}
+      {/* <div className="flex-1">
         <div className="mb-8 flex items-center justify-between">
           <h3 className="m-0">Popular how to guides</h3>
 
@@ -143,9 +131,10 @@ export default function GuidesAndSamples() {
             <Guide {...guide} key={guide.title} />
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div
+      {/* Commenting out Popular sample repositories section */}
+      {/* <div
         className={clsx(
           'mx-8 block flex-shrink-0 bg-gradient-to-b from-transparent via-secondary-700 to-transparent',
           'hidden w-px md:block'
@@ -169,7 +158,7 @@ export default function GuidesAndSamples() {
             <Sample {...sample} key={sample.title} />
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

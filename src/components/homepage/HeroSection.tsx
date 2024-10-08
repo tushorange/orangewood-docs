@@ -2,45 +2,45 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import {
   BookOpenRegular,
-  TargetRegular,
-  MicRegular,
-  VideoRegular,
+  Chat24Regular,
+  DeveloperBoard24Regular,
+  Wand24Regular,
 } from '@fluentui/react-icons';
 import ThemedImage from '@theme/ThemedImage';
 import clsx from 'clsx';
 
 const PRODUCTS = [
   {
-    title: 'Live Video',
+    title: 'Sim Stack',
     link: '/guides/sim-stack/orngwood-sim-stack',
-    icon: VideoRegular,
+    icon: Wand24Regular,
     lightImage: '/static/landing-page/hero/1bg.png',
     darkImage: '/static/landing-page/hero/1bg.png',
     text: 'Simulation Of Orangewood OWL Arm',
   },
   {
-    title: 'Voice',
+    title: 'Robot SDK',
     link: '/guides/owl-robot-sdk/owl-bot-sdk',
-    icon: MicRegular,
+    icon: DeveloperBoard24Regular,
     lightImage: '/static/landing-page/hero/voice-graphic.png',
     darkImage: '/static/landing-page/hero/voice-graphic-dark.png',
-    text: 'Python Apps Using OWL Robort  SDK',
+    text: 'Python Apps Using OWL Robot SDK',
   },
   {
-    title: 'Interactive Live Streaming',
+    title: 'OWL 6.5 Hardware',
     link: '/guides/owl-6.5-robot-hardware/owl-robot-client',
     icon: BookOpenRegular,
     lightImage: '/static/landing-page/hero/livestream-graphic.png',
     darkImage: '/static/landing-page/hero/livestream-graphic-dark.png',
-    text: 'Python and Typescript SDKs',
+    text: 'Get Started OWL 6.5 Robot Hardware',
   },
   {
-    title: 'Voice',
-    link: '/guides/owl-robot-sdk/owl-bot-sdk',
-    icon:TargetRegular,
+    title: 'RoboGPT',
+    link: 'https://robogpt.orangewood.co/',
+    icon:Chat24Regular,
     lightImage: '/static/landing-page/hero/voice-graphic.png',
     darkImage: '/static/landing-page/hero/voice-graphic-dark.png',
-    text: 'Low level control with ROS',
+    text: 'Early access to RoboGPT ',
   },
 ];
 

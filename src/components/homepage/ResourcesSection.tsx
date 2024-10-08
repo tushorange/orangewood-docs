@@ -103,21 +103,18 @@ export default function ReferenceSection() {
       ? ALL_REFERENCES
       : ALL_REFERENCES.filter((r) => r.type === activeType);
 
-  // Debugging: Log the filtered references
-  console.log('Filtered References:', references);
-
   const currentReferences = references.slice((page - 1) * 3, page * 3);
   const pages = Math.ceil(references.length / 3);
 
   const nextPage = () => {
     if (page < pages) {
-      setPage(page + 1);
+      setPage((prevPage) => prevPage + 1);
     }
   };
 
   const prevPage = () => {
     if (page > 1) {
-      setPage(page - 1);
+      setPage((prevPage) => prevPage - 1);
     }
   };
 
@@ -138,55 +135,61 @@ export default function ReferenceSection() {
         </div>
 
         <div className="mb-6 inline-flex gap-1 rounded-lg bg-zinc-100 p-2 font-jakarta text-sm font-semibold dark:bg-secondary-700">
-        <button
-        className={clsx(
-          'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
-          activeType === "all"
-            ? 'bg-primary text-white'
-            : 'bg-secondary-800 text-black dark:text-white'
-        )}
-        data-tag={"all"}
-        onClick={() => setActiveType("all")}
-      >
-        {"All"}
-      </button>
-      <button
-        className={clsx(
-          'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
-          activeType === "blog"
-            ? 'bg-primary text-white'
-            : 'bg-secondary-800 text-black dark:text-white'
-        )}
-        data-tag={"blog"}
-        onClick={() => setActiveType("blog")}
-      >
-        {"Blog"}
-      </button>
-      <button
-        className={clsx(
-          'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
-          activeType === "video"
-            ? 'bg-primary text-white'
-            : 'bg-secondary-800 text-black dark:text-white'
-        )}
-        data-tag={"video"}
-        onClick={() => setActiveType("video")}
-      >
-        {"All"}
-      </button>
-        
+          <button
+            className={clsx(
+              'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
+              activeType === 'all'
+                ? 'bg-primary text-white'
+                : 'bg-secondary-800 text-black dark:text-white'
+            )}
+            onClick={() => {
+              setActiveType('all');
+              setPage(1); // Reset to page 1 when type changes
+            }}
+          >
+            {'All'}
+          </button>
+          <button
+            className={clsx(
+              'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
+              activeType === 'blog'
+                ? 'bg-primary text-white'
+                : 'bg-secondary-800 text-black dark:text-white'
+            )}
+            onClick={() => {
+              setActiveType('blog');
+              setPage(1); // Reset to page 1 when type changes
+            }}
+          >
+            {'Blogs'}
+          </button>
+          <button
+            className={clsx(
+              'cursor-pointer rounded-md border-none px-3.5 py-1.5 font-jakarta text-sm font-medium',
+              activeType === 'video'
+                ? 'bg-primary text-white'
+                : 'bg-secondary-800 text-black dark:text-white'
+            )}
+            onClick={() => {
+              setActiveType('video');
+              setPage(1); // Reset to page 1 when type changes
+            }}
+          >
+            {'Videos'}
+          </button>
         </div>
 
         <div className="relative flex flex-col">
           <div className="no-underline-links grid grid-cols-3 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {currentReferences.map((references, idx) => {
-              return <Reference {...references} key={idx} />;
+            {currentReferences.map((reference, idx) => {
+              return <Reference {...reference} key={idx} />;
             })}
           </div>
 
           <div className="my-10 ml-auto flex items-center justify-center md:my-0">
             <button
               onClick={prevPage}
+              disabled={page === 1}
               className="top-1/2 -left-14 rounded-lg bg-transparent p-1 hover:bg-secondary-800 md:absolute md:-translate-y-1/2"
             >
               <ChevronLeftRegular className="h-6 w-6" />
@@ -194,6 +197,7 @@ export default function ReferenceSection() {
 
             <button
               onClick={nextPage}
+              disabled={page === pages}
               className="top-1/2 -right-14 rounded-lg bg-transparent p-1 hover:bg-secondary-800 md:absolute md:-translate-y-1/2"
             >
               <ChevronRightRegular className="h-6 w-6" />

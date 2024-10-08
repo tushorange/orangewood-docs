@@ -507,8 +507,11 @@ const config = {
           src: '/logo/ow-black.png',
           srcDark: '/logo/OWL-Logo-white.png',
           alt: 'Orangewood Documentation | Ornagewood Docs',
-          height: '50px',
-          width: 'auto',
+          height: '80px',
+          width: '144px',
+          style: {
+            objectFit: 'contain',
+          }
         },
         items: [
           {
@@ -516,18 +519,6 @@ const config = {
             to: 'guides',
             className: 'guides-top-header',
           },
-          // {
-          //   label: 'Dummy Text 1',
-          //   type: 'dropdown',
-          //   className: 'dyte-dropdown',
-          //   items: [
-          //     {
-          //       type: 'html',
-          //       value: sdksHTML,
-          //       className: 'dyte-dropdown',
-          //     },
-          //   ],
-          // },
           {
             label: 'RobotGPT',
             to: 'https://orangewoodwebsite.vercel.app/robo-gpt',
@@ -570,8 +561,8 @@ const config = {
       footer: {
         logo: {
           href: '/',
-          src: 'static/logo/ow-black.png',
-          srcDark: 'static/logo/ow-black.png',
+          src: 'https://res.cloudinary.com/dreradzep/image/upload/v1723783987/logo-white_kw3yma.png',
+          srcDark: 'https://res.cloudinary.com/dreradzep/image/upload/v1723783987/logo-white_kw3yma.png',
           alt: 'Orangewood Documentation | Ornagewood Docs',
           height: '36px',
         },

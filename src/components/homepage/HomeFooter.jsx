@@ -28,33 +28,55 @@ const developers = [
 ];
 
 const usecases = [
-  { name: 'Visual Inspection', href: 'https://orangewoodwebsite.vercel.app/use-cases' },
-  { name: 'Bin Picking', href: 'https://orangewoodwebsite.vercel.app/use-cases' },
-  { name: 'Powder Coating', href: 'https://orangewoodwebsite.vercel.app/use-cases' },
-  { name: 'Bartending Bot', href: 'https://orangewoodwebsite.vercel.app/use-cases' },
-  { name: 'Spray Painting', href: 'https://orangewoodwebsite.vercel.app/use-cases' },
+  {
+    name: 'Visual Inspection',
+    href: 'https://www.orangewood.co/use-cases',
+  },
+  {
+    name: 'Bin Picking',
+    href: 'https://www.orangewood.co/use-cases',
+  },
+  {
+    name: 'Powder Coating',
+    href: 'https://www.orangewood.co/use-cases',
+  },
+  {
+    name: 'Bartending Bot',
+    href: 'https://www.orangewood.co/use-cases',
+  },
+  {
+    name: 'Spray Painting',
+    href: 'https://www.orangewood.co/use-cases',
+  },
 ];
 
 const company = [
-  { name: 'About Us', href: 'https://orangewoodwebsite.vercel.app/about' },
-  { name: 'Blog', href: 'https://orangewoodwebsite.vercel.app/blogs' },
-  { name: 'Careers', href: 'https://orangewoodwebsite.vercel.app/careers' },
+  { name: 'About Us', href: 'https://www.orangewood.co/about' },
+  { name: 'Blog', href: 'https://www.orangewood.co/blogs' },
+  { name: 'Careers', href: 'https://www.orangewood.co/careers' },
   { name: 'Community', href: 'https://discord.com/invite/tuEAx6T4YE' },
   { name: 'Contact Us', href: 'mailto:all@orangewood.co' },
-  { name: 'FAQ', href: '' },
-  { name: 'Demo on RoboGPT', href: 'https://www.youtube.com/watch?v=56Ip4CBfX-E' },
+  { name: 'FAQ', href: '/faq' },
+  {
+    name: 'Demo on RoboGPT',
+    href: 'https://www.youtube.com/watch?v=56Ip4CBfX-E',
+  },
 ];
 
 function Links({ name, links }) {
   const [activeAccordion, setActiveAccordion] = useState(null);
 
   const toggleAccordion = (href) => {
-    setActiveAccordion((prevAccordion) => (prevAccordion === href ? null : href));
+    setActiveAccordion((prevAccordion) =>
+      prevAccordion === href ? null : href
+    );
   };
 
   return (
     <div>
-      <h3 className="font-jakarta text-base font-semibold uppercase text-gray-400 dark:text-[#fff]">{name}</h3>
+      <h3 className="font-jakarta text-base font-semibold uppercase text-gray-400 dark:text-[#fff]">
+        {name}
+      </h3>
       <div className="flex flex-col gap-3">
         {links.map(({ name, href, isAccordion, content }) => (
           <div key={name}>
@@ -93,9 +115,10 @@ export default function Footer() {
         <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <ThemedImage
             alt="Orangewood Labs"
-            className="h-9 w-fit lg:h-12"
+            className="h-12 w-36 object-contain lg:h-14 lg:w-40" // Adjust the sizes as needed
             sources={{
-              light: 'https://res.cloudinary.com/dreradzep/image/upload/v1728387740/ow-black_ztbhda.png',
+              light:
+                'https://res.cloudinary.com/dreradzep/image/upload/v1728387740/ow-black_ztbhda.png',
               dark: 'https://res.cloudinary.com/dreradzep/image/upload/v1723783987/logo-white_kw3yma.png',
             }}
           />
@@ -111,21 +134,15 @@ export default function Footer() {
 
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
           <div className="flex flex-wrap gap-2 text-sm text-gray-500">
-            <Link
-              className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]"
-            >
+            <Link className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
               Privacy Policy
             </Link>
             &bull;
-            <Link
-              className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]"
-            >
+            <Link className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
               Terms of Service
             </Link>
             &bull;
-            <Link
-              className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]"
-            >
+            <Link className="text-inherit hover:text-black hover:underline dark:text-[#999] dark:hover:text-[#ff5b22]">
               Website Terms of Use
             </Link>
             &bull;

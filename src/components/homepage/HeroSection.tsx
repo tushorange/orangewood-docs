@@ -6,7 +6,6 @@ import {
   DeveloperBoard24Regular,
   Wand24Regular,
 } from '@fluentui/react-icons';
-import ThemedImage from '@theme/ThemedImage';
 import clsx from 'clsx';
 
 const PRODUCTS = [
@@ -14,33 +13,25 @@ const PRODUCTS = [
     title: 'Sim Stack',
     link: '/guides/sim-stack/orngwood-sim-stack',
     icon: Wand24Regular,
-    lightImage: '/static/landing-page/hero/1bg.png',
-    darkImage: '/static/landing-page/hero/1bg.png',
-    text: 'Simulation Of Orangewood OWL Arm',
+    text: 'Simulate the OWL robotic arm in a virtual environment.',
   },
   {
     title: 'Robot SDK',
     link: '/guides/owl-robot-sdk/owl-bot-sdk',
     icon: DeveloperBoard24Regular,
-    lightImage: '/static/landing-page/hero/voice-graphic.png',
-    darkImage: '/static/landing-page/hero/voice-graphic-dark.png',
-    text: 'Python Apps Using OWL Robot SDK',
+    text: 'Develop Python applications using the OWL Robot SDK.',
   },
   {
     title: 'OWL 6.5 Hardware',
     link: '/guides/owl-6.5-robot-hardware/owl-robot-client',
     icon: BookOpenRegular,
-    lightImage: '/static/landing-page/hero/livestream-graphic.png',
-    darkImage: '/static/landing-page/hero/livestream-graphic-dark.png',
-    text: 'Get Started OWL 6.5 Robot Hardware',
+    text: 'Learn to operate and maintain OWL 6.5 Robot Hardware.',
   },
   {
     title: 'RoboGPT',
     link: 'https://robogpt.orangewood.co/',
-    icon:Chat24Regular,
-    lightImage: '/static/landing-page/hero/voice-graphic.png',
-    darkImage: '/static/landing-page/hero/voice-graphic-dark.png',
-    text: 'Early access to RoboGPT ',
+    icon: Chat24Regular,
+    text: 'Get early access to RoboGPT, an AI-powered assistant for robots.',
   },
 ];
 
@@ -49,39 +40,26 @@ function HeroProduct({
   title,
   icon: Icon,
   text,
-  lightImage,
-  darkImage,
-}: // beta,
-(typeof PRODUCTS)[0]) {
+}: (typeof PRODUCTS)[0]) {
   return (
     <Link
       to={link}
       style={{
         borderWidth: '1px',
+        textDecoration: 'none', // Disable underline for product title
       }}
       className={clsx(
         'hover:no-gr group cursor-pointer overflow-clip rounded-3xl from-primary/30 via-transparent to-transparent text-black transition-all hover:bg-gradient-to-tr hover:text-primary dark:text-white',
         'hover: #fd5821 w-[90vw] border-secondary-700 bg-secondary-900 dark:border-secondary-800 sm:w-[440px]'
       )}
     >
-      <div className="p-6 !pb-0">
+      <div className="p-6">
         <h3 className="mb-1.5 flex items-center gap-3 font-jakarta group-hover:text-primary">
           <Icon className="h-7 w-7" />
-          {/* <div>
-            {title}
-            {beta && <span className="font-normal text-text-400"> (Beta)</span>}
-          </div> */}
+          {title}
         </h3>
         <p className="mb-0 text-sm text-zinc-400">{text}</p>
       </div>
-      <ThemedImage
-        sources={{
-          light: lightImage,
-          dark: darkImage,
-        }}
-        alt={title}
-        className="mt-1 w-full transition-transform group-hover:scale-110"
-      />
     </Link>
   );
 }

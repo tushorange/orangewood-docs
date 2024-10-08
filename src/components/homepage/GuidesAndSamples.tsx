@@ -154,7 +154,7 @@ export default function GuidesAndSamples() {
 
       <div className="w-full md:max-w-sm">
         <div className="mb-8 flex items-center justify-between">
-          <h3 className="m-0">Popular sample repositries</h3>
+          <h3 className="m-0">Popular sample repositories</h3>
 
           <Link
             to="https://github.com/orangewood-labs"

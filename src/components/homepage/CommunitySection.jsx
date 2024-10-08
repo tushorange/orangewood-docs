@@ -9,7 +9,6 @@ const githubUsernames = [
   'dipraman',
   'tushgaurav',
   'topguns837',
-  'shubhankar2003',
   'mendacium-a11y',
   'yuvimehta',
   // 'alias-rahil',

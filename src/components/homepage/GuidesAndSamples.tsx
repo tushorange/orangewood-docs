@@ -170,13 +170,13 @@ export default function GuidesAndSamples() {
     </div> */}
   {/* </section> */}
   {/* Full-width VelocityScroll without background gradient */}
-  <div className="w-screen py-2"> {/* Adjusted padding to shift up */}
+  {/* <div className="w-screen py-2"> 
         <VelocityScroll
-          text={scrollingTextWithDot} // Use the updated text with dots
+          text={scrollingTextWithDot} 
           default_velocity={5}
           className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-transparent bg-gradient-to-t from-yellow-400 to-red-500 dark:from-yellow-600 dark:to-red-700 bg-clip-text drop-shadow-sm md:text-7xl md:leading-[5rem] opacity-95"
         />
-      </div>
+      </div> */}
 
 </>
 

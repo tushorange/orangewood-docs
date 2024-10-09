@@ -70,7 +70,7 @@ export default function HeroSection() {
       <section className="no-underline-links px-4 pt-16 lg:py-0">
         <div className="flex flex-col items-center justify-between py-14">
           <h2 className="mb-4 font-jakarta text-5xl font-bold">
-            Build with Orangewood Co 🦾
+            Build with Orangewood Labs 🦾
           </h2>
           <p className="max-w-xl text-center text-text-400">
             Orangewood builds AI-powered robotic arms that are simple to

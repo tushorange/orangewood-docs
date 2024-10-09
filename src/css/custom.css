@@ -1189,7 +1189,7 @@ html[data-theme='dark'] .video_sidebar_header > div > a::before {
 }
 
 .guides-top-header {
-  @apply ml-6 mr-2 rounded-md border-secondary-700;
+  @apply mr-2 rounded-md border-secondary-700;
   border-width: 1px;
 }
 

@@ -71,7 +71,6 @@ export default function SidebarMenu() {
           <div
             className={clsx(
               styles.section,
-              isCurrentSection && styles.sectionActive
             )}
             onClick={navigateToFirstSection}
             onKeyDown={(e) => {

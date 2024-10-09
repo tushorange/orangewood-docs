@@ -45,29 +45,6 @@
     roslaunch owl_bringup bringup.launch gripper:=robotiq2f85 world:=table camera:=on sim:=on time:=5
     ```
 
-- question: What is the OWL Robot SDK?
-  tags: ["General"]
-  answer: |-
-    The OWL Robot SDK is a Python module designed to operate the OWLRobot in Gazebo using MoveIt. It provides a simple API to control the robot's movements and interactions.
-
-- question: How do I install the OWL Robot SDK?
-  tags: ["General"]
-  answer: |-
-    You can install the OWL Robot SDK by running the following command in your terminal:
-    ```bash
-    pip install owl-robot-sdk
-    ```
-
-- question: What is the purpose of the example code provided?
-  tags: ["General"]
-  answer: |-
-    The example code demonstrates how to use the OWL Robot SDK APIs to control the robot's movements, check its status, and manage gripper operations. It showcases various functionalities such as getting the robot's status, moving to specific poses, and adding/removing obstacles.
-
-- question: What should I do if I encounter issues while using the SDK?
-  tags: ["General"]
-  answer: |-
-    Ensure that you have the correct environment set up, including the OWL Robot Simulation running on Gazebo. Check for any error messages in the terminal and refer to the documentation for troubleshooting tips.
-
 #
 # Technical FAQs
 #
@@ -96,39 +73,3 @@
   tags: ["Technical"]
   answer: |-
     Before using the OWL Robot SDK, ensure you have run the simulation and MoveIt bringup from the OWL Robot Simulation repository. Follow the setup instructions provided in that repository.
-
-- question: What features does the OWL Robot SDK provide?
-  tags: ["Technical"]
-  answer: |-
-    The OWL Robot SDK includes features such as:
-    - Getting the robot's running status and version.
-    - Retrieving the robot's TCP (Tool Center Point) position and joint values.
-    - Moving the robot to specific poses or joint configurations.
-    - Controlling the gripper (open/close) and handling obstacles in the simulation.
-
-- question: What options are available for the gripper in the simulation?
-  tags: ["Technical"]
-  answer: |-
-    The available options for the gripper are:
-    - pneumatic
-    - vacuum
-    - robotiq2f85
-
-- question: What world options can I choose from in the simulation?
-  tags: ["Technical"]
-  answer: |-
-    The available world options are:
-    - empty
-    - stand
-    - table
-
-- question: Can I disable the Gazebo simulation and run only the MoveIt configuration?
-  tags: ["Technical"]
-  answer: |-
-    Yes, you can disable the Gazebo simulation by setting the `sim` option to "off" and the `time` option to 0. However, it's recommended to set a time value from 5 to 10 seconds for starting the simulation.
-
-- question: What should I do if I encounter issues during setup or usage?
-  tags: ["Technical"]
-  answer: |-
-    Ensure that all prerequisites are met, including the correct version of Ubuntu and ROS. Review error messages in the terminal and consult the documentation for troubleshooting guidance.
-

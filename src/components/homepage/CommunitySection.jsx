@@ -20,7 +20,7 @@ export default function CommunitySection() {
         <h2 className="text-4xl font-bold mb-4 text-center">
           Join the <span style={{ color: '#FF6F00' }}>community</span>
         </h2>
-        <p className="mb-10 text-zinc-500">
+        <p className="mb-10 text-white">
           Join the Orangewood community for updates and support on our easy-to-use, AI-powered robotic arms.
         </p>
         <div className="mx-auto mb-16 flex flex-wrap -space-x-1.5">

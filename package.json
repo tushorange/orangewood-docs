@@ -41,6 +41,7 @@
     "@radix-ui/react-select": "^2.0.0",
     "@stoplight/elements": "^8.0.2",
     "clsx": "^1.2.1",
+    "framer-motion": "^11.11.4",
     "nanoid": "^5.0.6",
     "param-case": "^3.0.4",
     "patch-package": "^6.5.1",

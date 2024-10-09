@@ -6,10 +6,10 @@ import {
   DocumentRegular,
   OpenRegular,
   RecordRegular,
-  VideoRegular,
 } from '@fluentui/react-icons';
 import clsx from 'clsx';
 import { ChevronRight, GitHub } from 'react-feather';
+import { VelocityScroll } from '../ScrollBasedVelocity';
 
 interface Guide {
   title: string;
@@ -22,7 +22,7 @@ const guides: Guide[] = [
   {
     title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
     icon: RecordRegular,
-    text: '', 
+    text: '',
     link: '',
   },
   {
@@ -114,51 +114,71 @@ function Sample({ title, skills, blog, source, demo }: Sample) {
 }
 
 export default function GuidesAndSamples() {
+  // Define multiple texts for scrolling
+  const scrollingTexts = [
+    "RoboGPT",
+    "Simulation Stack",
+    "OWL Robot 6.5",
+    "SDK's",
+    "API's",
+  ];
+
+  // Join the texts with a dot in between and add an additional dot at the end
+  const scrollingTextWithDot = scrollingTexts.map(text => `${text} · `).join('');
+  
   return (
-    <section className="no-underline-links my-40 mx-auto flex w-full max-w-5xl flex-col gap-10 p-4 py-0 md:flex-row md:gap-0">
-      {/* Commenting out Popular how-to guides section */}
-      {/* <div className="flex-1">
-        <div className="mb-8 flex items-center justify-between">
-          <h3 className="m-0">Popular how to guides</h3>
+    <>
+  {/* <section className="no-underline-links my-40 mx-auto flex w-full max-w-5xl flex-col gap-10 p-4 py-0 md:flex-row md:gap-0"> */}
+    
+    {/* Commenting out Popular how-to guides section */}
+    {/* <div className="flex-1">
+      <div className="mb-8 flex items-center justify-between">
+        <h3 className="m-0">Popular how to guides</h3>
+        <Link to="" className="font-jakarta text-sm font-semibold">
+          Guides<ArrowRightFilled className="ml-1" />
+        </Link>
+      </div>
+      <div className="flex flex-col gap-4">
+        {guides.map((guide) => (
+          <Guide {...guide} key={guide.title} />
+        ))}
+      </div>
+    </div> */}
 
-          <Link to="" className="font-jakarta text-sm font-semibold">
-            Guides<ArrowRightFilled className="ml-1" />
-          </Link>
-        </div>
+    {/* Commenting out Popular sample repositories section */}
+    {/* <div
+      className={clsx(
+        'mx-8 block flex-shrink-0 bg-gradient-to-b from-transparent via-secondary-700 to-transparent',
+        'hidden w-px md:block'
+      )}
+    /> */}
 
-        <div className="flex flex-col gap-4">
-          {guides.map((guide) => (
-            <Guide {...guide} key={guide.title} />
-          ))}
-        </div>
-      </div> */}
 
-      {/* Commenting out Popular sample repositories section */}
-      {/* <div
-        className={clsx(
-          'mx-8 block flex-shrink-0 bg-gradient-to-b from-transparent via-secondary-700 to-transparent',
-          'hidden w-px md:block'
-        )}
-      />
+    {/* Popular sample repositories section */}
+    {/* <div className="w-full md:max-w-sm">
+      <div className="mb-8 flex items-center justify-between">
+        <h3 className="m-0">Popular sample repositories</h3>
+        <Link to="https://github.com/orangewood-labs" className="font-jakarta text-sm font-semibold">
+          All apps <ArrowRightFilled className="ml-1" />
+        </Link>
+      </div>
+      <div className="flex flex-col gap-4">
+        {samples.map((sample) => (
+          <Sample {...sample} key={sample.title} />
+        ))}
+      </div>
+    </div> */}
+  {/* </section> */}
+  {/* Full-width VelocityScroll without background gradient */}
+  <div className="w-screen py-2"> {/* Adjusted padding to shift up */}
+        <VelocityScroll
+          text={scrollingTextWithDot} // Use the updated text with dots
+          default_velocity={5}
+          className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-transparent bg-gradient-to-t from-yellow-400 to-red-500 dark:from-yellow-600 dark:to-red-700 bg-clip-text drop-shadow-sm md:text-7xl md:leading-[5rem] opacity-95"
+        />
+      </div>
 
-      <div className="w-full md:max-w-sm">
-        <div className="mb-8 flex items-center justify-between">
-          <h3 className="m-0">Popular sample repositories</h3>
+</>
 
-          <Link
-            to="https://github.com/orangewood-labs"
-            className="font-jakarta text-sm font-semibold"
-          >
-            All apps <ArrowRightFilled className="ml-1" />
-          </Link>
-        </div>
-
-        <div className="flex flex-col gap-4">
-          {samples.map((sample) => (
-            <Sample {...sample} key={sample.title} />
-          ))}
-        </div>
-      </div> */}
-    </section>
   );
 }

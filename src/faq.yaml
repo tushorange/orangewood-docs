@@ -7,36 +7,6 @@
   answer: |-
     The Orangewood Simulation Stack is a repository that contains simulation packages and MoveIt! configurations for the Orangewood indigenous OWL 6.5 Robot, along with SDK examples.
 
-- question: What are the prerequisites for setting up the simulation on a host PC?
-  tags: ["General"]
-  answer: |-
-    To set up the simulation on a host PC, you need:
-    - Ubuntu 20.04.6 LTS
-    - ROS Noetic (either full desktop installation or single line installation).
-
-- question: How do I install ROS Noetic on my host PC?
-  tags: ["General"]
-  answer: |-
-    You can install ROS Noetic using a single line command. Open a terminal and run:
-    ```bash
-    wget -c https://raw.githubusercontent.com/orangewood-co/orangewood_sim_stack/main/host_pc_scripts/ros_install_noetic.sh && chmod +x ./ros_install_noetic.sh && ./ros_install_noetic.sh
-    ```
-
-- question: How can I set up the ROS workspace for the Orangewood simulation?
-  tags: ["General"]
-  answer: |-
-    To set up the ROS workspace, execute the following commands in the terminal:
-    ```bash
-    mkdir -p ~/orangewood_ws/src
-    cd ~/orangewood_ws/src
-    git clone https://github.com/orangewood-co/orangewood_sim_stack.git
-    cd ~/orangewood_ws
-    rosdep install --from-paths src --ignore-src -r -y
-    catkin_make -j1
-    echo "source ~/orangewood_ws/devel/setup.bash" >> /home/$USER/.bashrc
-    source /home/$USER/.bashrc
-    ```
-
 - question: What command should I use to run the Gazebo simulation for the OWL 6.5 Robot?
   tags: ["General"]
   answer: |-

@@ -537,7 +537,7 @@ const config = {
           },
           {
             label: 'Support',
-            to: 'mailto:all@orangewood.co',
+            to: 'mailto:hellorobot@orangewood.co',
         },        
 
           // {

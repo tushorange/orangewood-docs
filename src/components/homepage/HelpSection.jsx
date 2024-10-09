@@ -53,7 +53,7 @@ export default function HelpSection({ className = '' }) {
               Orangewood's support team is ready to assist. Get 1:1 help now!
             </p>
             <Link
-              href="mailto:all@orangewood.co"
+              href="mailto:hellorobot@orangewood.co"
               className="text-primary dark:text-primary-100 inline-block"
             >
               Contact Us &rarr;

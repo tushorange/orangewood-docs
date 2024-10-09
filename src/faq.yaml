@@ -2,115 +2,133 @@
 # General FAQs
 #
 
-- question: Sample question
+- question: What is the Orangewood Simulation Stack?
   tags: ["General"]
   answer: |-
-    answer will be here
+    The Orangewood Simulation Stack is a repository that contains simulation packages and MoveIt! configurations for the Orangewood indigenous OWL 6.5 Robot, along with SDK examples.
 
-- question: Sample question
+- question: What are the prerequisites for setting up the simulation on a host PC?
   tags: ["General"]
   answer: |-
-    answer will be here
+    To set up the simulation on a host PC, you need:
+    - Ubuntu 20.04.6 LTS
+    - ROS Noetic (either full desktop installation or single line installation).
 
-- question: Sample question
+- question: How do I install ROS Noetic on my host PC?
   tags: ["General"]
   answer: |-
-    answer will be here
+    You can install ROS Noetic using a single line command. Open a terminal and run:
+    ```bash
+    wget -c https://raw.githubusercontent.com/orangewood-co/orangewood_sim_stack/main/host_pc_scripts/ros_install_noetic.sh && chmod +x ./ros_install_noetic.sh && ./ros_install_noetic.sh
+    ```
 
-- question: Sample question
+- question: How can I set up the ROS workspace for the Orangewood simulation?
   tags: ["General"]
   answer: |-
-    answer will be here
+    To set up the ROS workspace, execute the following commands in the terminal:
+    ```bash
+    mkdir -p ~/orangewood_ws/src
+    cd ~/orangewood_ws/src
+    git clone https://github.com/orangewood-co/orangewood_sim_stack.git
+    cd ~/orangewood_ws
+    rosdep install --from-paths src --ignore-src -r -y
+    catkin_make -j1
+    echo "source ~/orangewood_ws/devel/setup.bash" >> /home/$USER/.bashrc
+    source /home/$USER/.bashrc
+    ```
 
-- question: Sample question
+- question: What command should I use to run the Gazebo simulation for the OWL 6.5 Robot?
   tags: ["General"]
   answer: |-
-    answer will be here
+    To start the Gazebo simulation, use the following command:
+    ```bash
+    roslaunch owl_bringup bringup.launch gripper:=robotiq2f85 world:=table camera:=on sim:=on time:=5
+    ```
 
-- question: Sample question
+- question: What is the OWL Robot SDK?
   tags: ["General"]
   answer: |-
-    answer will be here
+    The OWL Robot SDK is a Python module designed to operate the OWLRobot in Gazebo using MoveIt. It provides a simple API to control the robot's movements and interactions.
 
-- question: Sample question
+- question: How do I install the OWL Robot SDK?
   tags: ["General"]
   answer: |-
-    answer will be here
+    You can install the OWL Robot SDK by running the following command in your terminal:
+    ```bash
+    pip install owl-robot-sdk
+    ```
 
-- question: Sample question
+- question: What is the purpose of the example code provided?
   tags: ["General"]
   answer: |-
-    answer will be here
+    The example code demonstrates how to use the OWL Robot SDK APIs to control the robot's movements, check its status, and manage gripper operations. It showcases various functionalities such as getting the robot's status, moving to specific poses, and adding/removing obstacles.
 
-- question: Sample question
+- question: What should I do if I encounter issues while using the SDK?
   tags: ["General"]
   answer: |-
-    answer will be here
-
-- question: Sample question
-  tags: ["General"]
-  answer: |-
-    answer will be here
+    Ensure that you have the correct environment set up, including the OWL Robot Simulation running on Gazebo. Check for any error messages in the terminal and refer to the documentation for troubleshooting tips.
 
 #
 # Technical FAQs
 #
 
-- question: Sample question
+- question: Can I customize the robot's movements?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    Yes, you can customize the robot's movements by modifying the trajectory and pose parameters in the example code. The SDK allows you to specify the target positions for the robot's TCP and joints.
 
-- question: Sample question
+- question: How can I add obstacles in the simulation?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    You can add obstacles using the `add_obstacle` method of the `OwlSimClient`. You need to specify the obstacle's name, dimensions, position, and type (e.g., box, cone, mesh).
 
-- question: Sample question
+- question: Is it possible to control the gripper using the SDK?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    Yes, the SDK provides methods to control the gripper, allowing you to open or close it by specifying the desired state or value.
 
-- question: Sample question
+- question: Where can I find more examples or detailed documentation for the OWL Robot SDK?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    Additional examples and detailed documentation can be found in the repository of the OWL Robot SDK, where you can explore more functionalities and usage patterns.
 
-- question: Sample question
+- question: How do I run the simulation and MoveIt bringup?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    Before using the OWL Robot SDK, ensure you have run the simulation and MoveIt bringup from the OWL Robot Simulation repository. Follow the setup instructions provided in that repository.
 
-- question: Sample question
+- question: What features does the OWL Robot SDK provide?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    The OWL Robot SDK includes features such as:
+    - Getting the robot's running status and version.
+    - Retrieving the robot's TCP (Tool Center Point) position and joint values.
+    - Moving the robot to specific poses or joint configurations.
+    - Controlling the gripper (open/close) and handling obstacles in the simulation.
 
-- question: Sample question
+- question: What options are available for the gripper in the simulation?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    The available options for the gripper are:
+    - pneumatic
+    - vacuum
+    - robotiq2f85
 
-- question: Sample question
+- question: What world options can I choose from in the simulation?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    The available world options are:
+    - empty
+    - stand
+    - table
 
-- question: Sample question
+- question: Can I disable the Gazebo simulation and run only the MoveIt configuration?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    Yes, you can disable the Gazebo simulation by setting the `sim` option to "off" and the `time` option to 0. However, it's recommended to set a time value from 5 to 10 seconds for starting the simulation.
 
-- question: Sample question
+- question: What should I do if I encounter issues during setup or usage?
   tags: ["Technical"]
   answer: |-
-    answer will be here
+    Ensure that all prerequisites are met, including the correct version of Ubuntu and ROS. Review error messages in the terminal and consult the documentation for troubleshooting guidance.
 
-#
-# Pricing FAQs
-#
-
-- question: Sample question
-  tags: ["Pricing"]
-  answer: |-
-    answer will be here

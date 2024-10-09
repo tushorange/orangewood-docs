@@ -127,7 +127,7 @@ export default function ReferenceSection() {
             <h2 className="mb-6 text-4xl">Want to know more?</h2>
           </div>
           <Link
-            to="https://www.orangewood.co/blogs"
+            to="https://www.orangewood.co/blogs"         
             className="font-jakarta text-sm font-semibold text-primary"
           >
             All Blogs <ArrowRightFilled className="ml-1" />

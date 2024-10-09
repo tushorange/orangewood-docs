@@ -23,11 +23,11 @@ export default function Homepage() {
         <link rel="prefetch" href="/assets/css/elements.min.css" />
       </Head>
       {/* <div>
-        <div className="w-full bg-gradient-to-r from-blue-500 to-red-500 p-4 text-center font-medium text-white">
-          Affected by Twilio Video Sunsetting? Migrate to Dyte and get upto $30,000
+        <div className="w-full bg-gradient-to-r from-orange-500 to-red-500 p-4 text-center font-medium text-white">
+          Dummy Sentence
           Credits{' '}
           <Link
-            to="https://dyte.io/twilio-video-competitor"
+            to=""
             className="text-white underline"
           >
             Learn more

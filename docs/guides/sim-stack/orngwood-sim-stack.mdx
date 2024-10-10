@@ -166,20 +166,20 @@ After getting the terminal, follow the commands to build the ROS package and ins
 
 ```bash
 #Upgrading pip install owl-robot-sdk --upgrade
-root@025d7e913e06:/home/robot/orangewood_ws pip install owl-robot-sdk --upgrade
+root@025d7e913e06:/home/robot/orangewood_ws$ pip install owl-robot-sdk --upgrade
 ```
 
 ```bash
 # Install depedencies
-root@025d7e913e06:/home/robot/orangewood_ws rosdep install --from-paths src --ignore-src -r -y
+root@025d7e913e06:/home/robot/orangewood_ws$ rosdep install --from-paths src --ignore-src -r -y
 ```
 ``` bash
 #Building packages
-root@025d7e913e06:/home/robot/orangewood_ws catkin_make -j1
+root@025d7e913e06:/home/robot/orangewood_ws$ catkin_make -j1
 ```
 ``` bash
 #Source workspace
-root@025d7e913e06:/home/robot/orangewood_ws source devel/setup.bash
+root@025d7e913e06:/home/robot/orangewood_ws$ source devel/setup.bash
 ```
 ```bash
 # Run OWL 6.5 Simulation
@@ -196,13 +196,13 @@ You can take next docker session from next host terminal. Switch to docker folde
 ```bash
 orangewood_simstack/docker$ ./new_sim_session.bash
 
-root@025d7e913e06:/home/robot/orangewood_ws source devel/setup.bash
+root@025d7e913e06:/home/robot/orangewood_ws$ source devel/setup.bash
 
 ## Testing SDK Example
 
-root@025d7e913e06:/home/robot/orangewood_ws  cd owl/owl_robot_sdk_examples/
+root@025d7e913e06:/home/robot/orangewood_ws$ cd owl/owl_robot_sdk_examples/
 
-root@025d7e913e06:/home/robot/orangewood_ws/owl/owl_robot_sdk_examples python3 api_test.py
+root@025d7e913e06:/home/robot/orangewood_ws/owl/owl_robot_sdk_examples$ python3 api_test.py
 ```
 
 <head>

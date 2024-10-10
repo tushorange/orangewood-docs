@@ -31,7 +31,7 @@ export default function HelpSection({ className = '' }) {
               you.
             </p>
             <Link
-              href="https://calendly.com/pratik-b-orangewood/30min"
+              href="https://form.jotform.com/231726585212455"
               className="text-primary dark:text-primary-100 inline-block"
             >
               Schedule a Call &rarr;

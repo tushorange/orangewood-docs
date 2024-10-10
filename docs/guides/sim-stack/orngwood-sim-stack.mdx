@@ -12,7 +12,7 @@ This document has a simulation packages and MoveIt! config of Orangewood indigen
 We offfer two methods to test and work with simulation
 
 1. Setup in your host Ubuntu 20.04.6 machine
-2. Setup Using **[Docker](../sim-stack/setup-docker.mdx)**
+2. Setup Using **[Docker](https://docs.docker.com/)**
 
 For Host PC setup, follow the instructions below
 
@@ -107,6 +107,111 @@ This time is when to start MoveIt config after launching the simulation. If you 
   style={{ float: 'left', marginRight: '20px', marginBottom: '20px' }} 
 />
 
+## 4) Setting Up Orangewood Simulation on Docker
+
+In order to setup Docker in your machine, first clone the orangewood simstack in your host machine
+
+```bash
+mkdir -p ~/orangewood_ws/src
+cd ~/orangewood_ws/src
+git clone https://github.com/orangewood-co/orangewood_sim_stack.git
+cd ~/orangewood_ws/src/orangewood_simstack/docker/
+```
+## 5) Install Docker in Host Machine
+
+Run the following script to install Docker and the NVIDIA Container toolkit:
+
+``` bash
+orangewood_simstack/docker$ ./setup_host_machine.sh
+```
+
+It will take some time to install Docker and NVIDIA Container toolkit
+
+After installing everything, do a REBOOT of your PC
+
+## 6) Build or Pull Docker Image of Orangewood Simulation
+We have two option to get the docker image for simulation,
+
+    - Building a new image
+    - Download/Pull an image from Docker Hub.
+
+:::info note
+Building a new docker image will take time, if you have good configuration PC, you can do that, othervice you can go with pulling from docker hub. It require ~4GB of download
+:::
+
+- **Building a new Image**
+```bash
+orangewood_simstack/docker$ ./build_image.bash
+```
+
+- **Pulling existing image from [Docker Hub](https://hub.docker.com/r/orangewoodlabs/orangewood_sim)**
+``` bash
+docker pull orangewoodlabs/orangewood_sim
+```
+
+## 7) Run Docker for running simulation
+After building/downloading image, you can run it using following command
+
+```bash
+#For build image
+
+orangewood_simstack/docker$ ./run_image.bash orangewood_sim_image
+
+#For pulled image
+
+orangewood_simstack/docker$ ./run_image.bash orangewoodlabs/orangewood_sim
+
+```
+After getting the terminal, follow the commands to build the ROS package and install depdencies
+
+```bash
+#Upgrading pip install owl-robot-sdk --upgrade
+pip install owl-robot-sdk --upgrade
+
+root@025d7e913e06:/home/robot/orangewood_ws
+```
+
+```bash
+# Install depedencies
+rosdep install --from-paths src --ignore-src -r -y
+
+root@025d7e913e06:/home/robot/orangewood_ws
+```
+``` bash
+#Building packages
+catkin_make -j1
+
+root@025d7e913e06:/home/robot/orangewood_ws
+```
+``` bash
+#Source workspace
+source devel/setup.bash
+
+root@025d7e913e06:/home/robot/orangewood_ws
+```
+```bash
+# Run OWL 6.5 Simulation
+roslaunch owl_bringup bringup.launch gripper:=robotiq2f85 world:=stand  camera:=on sim:=on time:=5
+```
+<img 
+  src={require('../../../static/img/sim.png').default} 
+  alt="Orangewood Simulation Setup"
+  style={{ float: 'left', marginRight: '20px', marginBottom: '20px' }} 
+/>
+
+You can take next docker session from next host terminal. Switch to docker folder and execute the following command
+
+```bash
+orangewood_simstack/docker$ ./new_sim_session.bash
+
+root@025d7e913e06:/home/robot/orangewood_ws# source devel/setup.bash
+
+## Testing SDK Example
+
+root@025d7e913e06:/home/robot/orangewood_ws # cd owl/owl_robot_sdk_examples/
+
+root@025d7e913e06:/home/robot/orangewood_ws/owl/owl_robot_sdk_examples# python3 api_test.py
+```
 
 <head>
   <title>Orangewood Simulation Stack</title>

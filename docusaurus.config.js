@@ -546,7 +546,7 @@ const config = {
           // },
           {
             label: 'Book a demo',
-            href: 'https://calendly.com/pratik-b-orangewood/30min',
+            href: 'https://form.jotform.com/231726585212455',
             position: 'right',
             className: 'navbar-book-demo',
           },

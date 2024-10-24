@@ -12,7 +12,7 @@ const meta = {
     'Democratizing Robots',
   url: 'https://orangewoodwebsite.vercel.app/',
   baseUrl: '/',
-  favicon: 'https://res.cloudinary.com/dreradzep/image/upload/v1725252710/fav_rda6mt.png',
+  favicon: 'https://res.cloudinary.com/dreradzep/image/upload/v1729247419/6.8_render_10_xidf9i.png',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],

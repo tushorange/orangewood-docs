@@ -50,6 +50,7 @@ export default function CommunitySection() {
           <Link
             className="flex items-center justify-center gap-2 rounded-full border border-primary-100 bg-gradient-to-r from-primary-100 to-primary-200 px-4 py-2 text-white shadow-md transition hover:bg-primary-300 hover:text-orange-800"
             href="https://www.linkedin.com/company/orangewood-labs/"
+            
           >
             <Linkedin className="h-5 w-5" /> LinkedIn &rarr;
           </Link>

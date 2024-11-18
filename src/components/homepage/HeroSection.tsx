@@ -5,6 +5,7 @@ import {
   Chat24Regular,
   DeveloperBoard24Regular,
   Wand24Regular,
+  DocumentCopyRegular,
 } from '@fluentui/react-icons';
 import clsx from 'clsx';
 
@@ -33,14 +34,15 @@ const PRODUCTS = [
     icon: Chat24Regular,
     text: 'Get early access to RoboGPT, an AI-powered assistant for robots.',
   },
+  {
+    title: 'Pick and Place Robot Guide',
+    link: '/guides/',
+    icon: DocumentCopyRegular,
+    text: 'Step-by-Step Guide for Pick and Place Robot Integration.',
+  },
 ];
 
-function HeroProduct({
-  link,
-  title,
-  icon: Icon,
-  text,
-}: (typeof PRODUCTS)[0]) {
+function HeroProduct({ link, title, icon: Icon, text }: (typeof PRODUCTS)[0]) {
   return (
     <Link
       to={link}

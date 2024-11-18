@@ -1,0 +1,86 @@
+---
+title: Manual for Pick and Place Robot Task
+sidebar_position: 1
+---
+
+## Installation
+
+This manual provides a step-by-step guide for developers to use the pick and place script with two types of robots. The script is designed to accept position lists and object identifiers, perform the pick and place tasks, and store relevant data for each episode.
+
+### Requirements
+
+#### Software
+
+- **Ubuntu 20.04**
+- **Python 3.9+**
+- **OpenCV**
+- **Robot SDK**
+
+#### Hardware
+
+- **Robot (OWL 6.5 Elite)**
+- **Cameras**
+  - **Wrist Mounted Camera (RGB)**
+  - **Side Camera (RGB)**
+- **Two-Finger Gripper**
+  - **Digital I/O**
+- **Mounts**
+  - **Camera Mounts**
+  - **Gripper Mount**
+
+### Connect Hardware
+
+1. Ensure robot is properly connected to your system.
+2. Verify that the camera is operational and can capture RGB images.
+
+### Configure Script
+
+Modify the configuration settings in the script, such as robot IP addresses and camera settings.
+
+### Input Data Format
+
+**Position List**  
+Prepare a list of positions where the robots will pick and place objects. The format should be:
+
+- Pick list: `[[x,y,z,r,p,y], [x,y,z,r,p,y]]`
+- Place list: `[[x,y,z,r,p,y], [x,y,z,r,p,y]]`
+
+### Execute the Script
+
+1. Run the script from your command line or integrated development environment:
+
+```python3
+python3 motion2.py
+```
+
+2. The script will initiate the robots and start the pick and place tasks.
+
+### Data Recording
+
+The script will automatically store the following data for each episode:
+
+1. **TCP Position:** The position of the tool center point during the task.
+2. **Joint Angles:** The angles of the robot joints at the time of execution.
+3. **Gripper State:** The state of the gripper (open/closed).
+4. **Camera Images:** Images captured by the camera during the task.
+5. **Language Instructions:** Any relevant instructions provided to the robots.
+
+### Data Storage Format
+
+Data will be stored in npy format. Each episode's data can be accessed in the output directory `episodes/` and from the Azure storage.
+
+### Troubleshooting
+
+- Robot Not Responding: Check connections and power supply.
+- Camera Issues: Ensure the camera drivers are installed and functioning.
+
+### Conclusion
+
+By following this manual, developers can effectively use the pick and place script with robots. Ensure to test the setup thoroughly before deployment and adjust parameters such as acceleration, velocity as necessary for different tasks.
+
+For further assistance, refer to the robot’s SDK documentation and repository documentation.
+
+<head>
+  <title>Pick and Place Robot Manual</title>
+  <meta name="description" content="add a description" />
+</head>

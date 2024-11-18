@@ -36,7 +36,7 @@ const PRODUCTS = [
   },
   {
     title: 'Pick and Place Robot Guide',
-    link: '/guides/',
+    link: '/guides/pick-and-place-robot-doc/pick-and-place-robot-guide',
     icon: DocumentCopyRegular,
     text: 'Step-by-Step Guide for Pick and Place Robot Integration.',
   },

@@ -1,6 +1,6 @@
 {
-  "position": 5,
+  "position": 4,
   "label": "Pick and Place Robot Guide",
   "collapsible": true,
-  "className": "document_sidebar_header"
+  "className": "pick_sidebar_header"
 }

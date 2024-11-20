@@ -11,6 +11,7 @@ const githubUsernames = [
   'topguns837',
   'mendacium-a11y',
   'yuvimehta',
+  'rkartik9'
 ];
 
 export default function CommunitySection() {

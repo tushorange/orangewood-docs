@@ -35,7 +35,7 @@ export default function SDKs() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
           <SDK
             name="Python"
-            to="/guides/owl-robot-sdk/owl-bot-sdk"
+            to="/guides/sdk/owl-robot-sdk/owl-bot-sdk"
             icon="/static/landing-page/sdk-icons/python.png"
           />
         </div>

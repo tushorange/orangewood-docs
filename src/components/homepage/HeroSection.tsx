@@ -18,7 +18,7 @@ const PRODUCTS = [
   },
   {
     title: 'Robot SDK',
-    link: '/guides/owl-robot-sdk/owl-bot-sdk',
+    link: '/guides/sdk/owl-robot-sdk/owl-bot-sdk',
     icon: DeveloperBoard24Regular,
     text: 'Develop Python applications using the OWL Robot SDK.',
   },
